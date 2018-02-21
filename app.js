@@ -20,16 +20,12 @@ var timeout = undefined;
 
 var msg = server.post('api/messages', connector.listen());
 
-// var data  = {
-//     "A": "https://goo.gl/MWUi5Y",
-//     "B" : "https://goo.gl/eikbr8",
-//     "C": "https://goo.gl/yFcAZQ"};
 
 var res;
 bot.dialog('/', function (session) {
     session.send("สวัสดีจ้า");
     session.send(session.message.text);
-    session.send(data.A);
+    session.send(data.คำร้องทั่วไป);
     var req = session.message.text;
     session.send(req);
 });
