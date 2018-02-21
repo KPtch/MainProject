@@ -29,7 +29,7 @@ bot.dialog('/', function (session) {
     session.send(session.message.text);
     
     
-    if(session.message.text === "คำร้องทั่วไป"){
+    if(session.message.text == "คำร้องทั่วไป"){
         session.send(myJSON['คำร้องทั่วไป']);
      }
     
