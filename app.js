@@ -30,9 +30,12 @@ bot.dialog('/', function (session) {
     session.send("สวัสดีจ้า");
     session.send(session.message.text);
     session.send('-----------------');
-    session.send(session.message);
+    session.send(session.threadID);
+    session.send(session.userid);
+    session.send(session.user_id);
+    session.send(session.id);
+    session.send(session.message.id);
     session.send(session.message.threadID);
-    session.send(msg.message.threadID);
     session.send('-----------------');
     
     if(session.message.text == "คำร้องทั่วไป"){
