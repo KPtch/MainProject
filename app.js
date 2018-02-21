@@ -44,7 +44,7 @@ bot.dialog('/', function (session) {
         
         var res = 'สวัสดีจ้าา เราคือบอท KunSri'+'\n';
         question.forEach(function(questions,index){
-            res += "\r\n"+questions;
+            res += "\n"+questions;
             session.send(res);
         });
         
