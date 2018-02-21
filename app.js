@@ -25,12 +25,14 @@ var data  = {
     "B" : "https://goo.gl/eikbr8",
     "C": "https://goo.gl/yFcAZQ"};
 
-
+var res;
 bot.dialog('/', function (session) {
     session.send("สวัสดีจ้า");
     session.send(session.message.text);
     var req = session.message.text;
-    handleMessage(req);
+    res = handleMessage(req);
+    session.send(res);
+    
 });
 
 
