@@ -22,8 +22,9 @@ var msg = server.post('api/messages', connector.listen());
 bot.dialog('/', function (session) {
     session.send("สวัสดีจ้า");
     if(session.message.text == "เอกสารดรอป"){
-       session.send("this is it u went https://www.youtube.com/");
+       session.send("this is it you want :","<br>https://www.youtube.com/");
        }
+    
 });
 
 
