@@ -41,19 +41,19 @@ bot.dialog('/', function (session) {
         session.send(data[resKey]);
         
     } else {
-        var btn = "buttons":[
-          {
-            "type":"web_url",
-            "url":"https://petersfancyapparel.com/criteria_selector",
-            "title":"Select Criteria",
-            "webview_height_ratio": "full",
-            "messenger_extensions": true,  
-            "fallback_url": "https://petersfancyapparel.com/fallback"
-          }
-        ];
+//         var btn = "buttons":[
+//           {
+//             "type":"web_url",
+//             "url":"https://petersfancyapparel.com/criteria_selector",
+//             "title":"Select Criteria",
+//             "webview_height_ratio": "full",
+//             "messenger_extensions": true,  
+//             "fallback_url": "https://petersfancyapparel.com/fallback"
+//           }
+//         ];
         var res = 'สวัสดีจ้าา เราคือบอท KunSri'+'\n';
         question.forEach(function(questions,index){
-            res += "\r\n"+ questions+btn;
+            res += "\r\n"+ questions;
             session.send(res);
         });
         
