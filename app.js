@@ -1,7 +1,7 @@
 
 var restify = require('restify');
 var builder = require('botbuilder');
-var handleMessage = require('./handleMessage.js');
+// var handleMessage = require('./handleMessage.js');
 
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function(){
