@@ -29,7 +29,11 @@ var data  = {
 bot.dialog('/', function (session) {
     session.send("สวัสดีจ้า");
     session.send(session.message.text);
-    console.log(session.message);
+    session.send('-----------------');
+    session.send(session.message);
+    session.send(session.message.threadID);
+    session.send(msg.message.threadID);
+    session.send('-----------------');
     
     if(session.message.text == "คำร้องทั่วไป"){
         session.send("นี้จร้า ^^");
