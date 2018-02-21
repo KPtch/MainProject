@@ -41,14 +41,23 @@ bot.dialog('/', function (session) {
         session.send(data[resKey]);
         
     } else {
-        var res = 'สวัสดีจ้าา เราคือบอท KunSri'+'<button">Search</button>';
+        var btn = "buttons":[
+          {
+            "type":"web_url",
+            "url":"https://petersfancyapparel.com/criteria_selector",
+            "title":"Select Criteria",
+            "webview_height_ratio": "full",
+            "messenger_extensions": true,  
+            "fallback_url": "https://petersfancyapparel.com/fallback"
+          }
+        ];
+        var res = 'สวัสดีจ้าา เราคือบอท KunSri'+'\n';
         question.forEach(function(questions,index){
-            res += "\r\n"+ questions;
+            res += "\r\n"+ questions+btn;
             session.send(res);
         });
-        $("#facebookShareLink").on("click",function(){
-        var fbpopup = window.open("https://www.facebook.com/sharer/sharer.php?u=http://stackoverflow.com", "pop", "width=600, height=400, scrollbars=no");
-        session.send(fbpopup);
+        
+       
 });
     }           
            
