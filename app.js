@@ -41,7 +41,7 @@ bot.dialog('/', function (session) {
         session.send(data[resKey]);
         
     } else {
-        var res = 'สวัสดีจ้าา เราคือบอท KunSri';
+        var res = 'สวัสดีจ้าา เราคือบอท KunSri'+'<button">Search</button>';
         question.forEach(function(questions,index){
             res += "\r\n"+ questions;
             session.send(res);
