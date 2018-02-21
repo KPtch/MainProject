@@ -18,10 +18,12 @@ var bot = new builder.UniversalBot(connector);
 
 
 
-server.post('api/messages', connector.listen());
+var msg = server.post('api/messages', connector.listen());
 
 bot.dialog('/', function (session) {
-    session.send("สวัสดีจ้าา เราคือบอท KunSri");
-    session.send("ต้องการเอกสารอะไรบอกเรามาได้เลยนะ");
+    session.send("สวัสดีจ้า");
+    session.send(msg);
+
+
 });
 
