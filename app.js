@@ -30,9 +30,10 @@ bot.dialog('/', function (session) {
     session.send("สวัสดีจ้า");
     session.send(session.message.text);
     var req = session.message.text;
-    res = handleMessage(req);
     session.send(req);
-     session.send(res);
+//     res = handleMessage(req);
+//     session.send(req);
+//      session.send(res);
 });
 
 
