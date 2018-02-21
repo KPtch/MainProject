@@ -26,7 +26,7 @@ var msg = server.post('api/messages', connector.listen());
 
 bot.dialog('/', function (session) {
     session.send("สวัสดีจ้า");
-    session.send(myJSON);
+    session.send(JSON.parse(myJSON));
 //     if(session.message.text == "เอกสารดรอป"){
 //        session.send("y");
         
