@@ -26,11 +26,9 @@ var msg = server.post('api/messages', connector.listen());
 
 bot.dialog('/', function (session) {
     session.send("สวัสดีจ้า");
-    session.send(myJSON['คำร้องทั่วไป']);
-//     if(session.message.text == "เอกสารดรอป"){
-//        session.send("y");
-        
-//      }
+    if(session.message.text == 'คำร้องทั่วไป'){
+        session.send(myJSON['คำร้องทั่วไป']);
+     }
     
 });
 
