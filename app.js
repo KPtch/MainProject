@@ -34,7 +34,7 @@ bot.dialog('/', function (session) {
 // //     session.send(session.userid);
 //     session.send(session.user_id);
 //     session.send(session.user.id);
-    session.send(session.id);
+    session.send(session);
     session.send(session.message.id);
     session.send(session.message.threadID);
     session.send('-----------------');
