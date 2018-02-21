@@ -57,8 +57,6 @@ bot.dialog('/', function (session) {
             session.send(res);
         });
         
-       
-});
     }           
            
 });
