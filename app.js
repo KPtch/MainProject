@@ -1,7 +1,7 @@
 
 var restify = require('restify');
 var builder = require('botbuilder');
-
+var respond = require('respond');
 
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function(){
@@ -15,14 +15,13 @@ var connector = new builder.ChatConnector({
 });
 var bot = new builder.UniversalBot(connector);
 
-var data = fs.readFileSync('/respond.json','utf8'); // get data to send to user
 
 var msg = server.post('api/messages', connector.listen());
 
 bot.dialog('/', function (session) {
     session.send("สวัสดีจ้า");
     if(session.message.text == "เอกสารดรอป"){
-       session.send(data);
+       session.send(respond);
        }
     
 });
