@@ -2,6 +2,7 @@
 var restify = require('restify');
 var builder = require('botbuilder');
 var data = require('./respond.json');
+var question = require('./question.json');
 
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function(){
@@ -21,13 +22,33 @@ var timeout = undefined;
 var msg = server.post('api/messages', connector.listen());
 
 
-var res;
 bot.dialog('/', function (session) {
-    session.send("สวัสดีจ้า");
-    session.send(session.message.text);
-    session.send(data.คำร้องทั่วไป);
+    
     var req = session.message.text;
-    session.send(req);
+    session.send('1');
+    var resKey = null;
+    var keys = Object.keys(data);
+    for(var i=0; i<keys.length; i++){
+        var key = keys[i];
+        var regex = new RegExp(key);
+        if(req.match(regex)){
+            session.send('2');
+            resKey = key;            
+            break;
+        }
+        
+    }
+    if(resKey){
+        
+        session.send(data.resKey);
+    } else {
+        var res = 'สวัสดีจ้าา เราคือบอท KunSri';
+        question.forEach(function(questions,index){
+            res += '\n'+ questions;
+            session.send(res);
+        });
+    }           
+           
 });
 
 
