@@ -39,7 +39,8 @@ bot.dialog('/', function (session) {
         
     }
     if(resKey){
-        
+        session.send('3');
+        session.send(resKey);
         session.send(data.resKey);
     } else {
         var res = 'สวัสดีจ้าา เราคือบอท KunSri';
