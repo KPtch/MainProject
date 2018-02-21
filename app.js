@@ -53,8 +53,9 @@ bot.dialog('/', function (session) {
         ];
         var res = 'สวัสดีจ้าา เราคือบอท KunSri'+'\n';
         question.forEach(function(questions,index){
-            res += questions+btn;
+            res += questions;
             session.send(res);
+            session.send(btn);
         });
         
     }           
