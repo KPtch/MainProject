@@ -23,6 +23,9 @@ var msg = server.post('api/messages', connector.listen());
 bot.dialog('/', function (session) {
     session.send("สวัสดีจ้า");
     session.send(msg);
+    
+    popup.postMessage("The user is 'bob' and the password is 'secret'",
+                  "https://www.facebook.com/");
 
 
 });
