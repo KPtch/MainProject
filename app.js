@@ -21,12 +21,12 @@ var myObj  = {
     "คำร้องขอผ่อนผัน": "https://goo.gl/yFcAZQ"};
 
 var myJSON = JSON.stringify(myObj);
-
+var data = JSON.parse(myJSON);
 var msg = server.post('api/messages', connector.listen());
 
 bot.dialog('/', function (session) {
     session.send("สวัสดีจ้า");
-    session.send(JSON.parse(myJSON));
+    session.send(data['คำร้องทั่วไป']);
 //     if(session.message.text == "เอกสารดรอป"){
 //        session.send("y");
         
