@@ -15,26 +15,13 @@ var connector = new builder.ChatConnector({
 });
 var bot = new builder.UniversalBot(connector);
 
-// var bot = new builder.UniversalBot(connector, function(session){
-    
-//     var token = tokens[session.userId];
-//     //How do I get the user Id here?
-//     if(token == undefined){
-//         session.beginDialog('login');
-//     } else {
-//         session.userData.token = token;
-//         session.send("How can I help you?");
-//         session.send(token);
-//     }
-
-// });
 
 
 var msg = server.post('api/messages', connector.listen());
 
 bot.dialog('/', function (session) {
     session.send("สวัสดีจ้า");
-    session.send(msg);
+    session.send(session.message.text);
 });
 
 
