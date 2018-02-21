@@ -19,6 +19,7 @@ var bot = new builder.UniversalBot(connector);
 var timeout = undefined;
 var inTimeout= {};
 var msg = server.post('api/messages', connector.listen());
+
 var data  = {
     "A": "https://goo.gl/MWUi5Y",
     "B" : "https://goo.gl/eikbr8",
@@ -28,7 +29,7 @@ var data  = {
 bot.dialog('/', function (session) {
     session.send("สวัสดีจ้า");
     session.send(session.message.text);
-    session.send(session.user.id);
+    session.send(msg.id);
     
     if(session.message.text == "คำร้องทั่วไป"){
         session.send("นี้จร้า ^^");
