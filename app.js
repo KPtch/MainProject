@@ -26,7 +26,10 @@ var msg = server.post('api/messages', connector.listen());
 
 bot.dialog('/', function (session) {
     session.send("สวัสดีจ้า");
-    if(session.message.text == 'คำร้องทั่วไป'){
+    session.send(session.message.text);
+    
+    
+    if(session.message.text === "คำร้องทั่วไป"){
         session.send(myJSON['คำร้องทั่วไป']);
      }
     
