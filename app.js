@@ -15,23 +15,24 @@ var connector = new builder.ChatConnector({
 });
 var bot = new builder.UniversalBot(connector);
 
-var myObj  = {
+
+var timeout = undefined;
+var inTimeout= {};
+var msg = server.post('api/messages', connector.listen());
+var data  = {
     "A": "https://goo.gl/MWUi5Y",
     "B" : "https://goo.gl/eikbr8",
-    "B": "https://goo.gl/yFcAZQ"};
+    "C": "https://goo.gl/yFcAZQ"};
 
-// var myJSON = JSON.stringify(myObj);
-
-var msg = server.post('api/messages', connector.listen());
 
 bot.dialog('/', function (session) {
     session.send("สวัสดีจ้า");
     session.send(session.message.text);
-    
+    session.send(session.user.id);
     
     if(session.message.text == "คำร้องทั่วไป"){
         session.send("นี้จร้า ^^");
-        session.send(myObj.A);
+        session.send(data.A);
      }
     
 });
