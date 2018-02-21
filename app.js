@@ -15,16 +15,18 @@ var connector = new builder.ChatConnector({
 });
 var bot = new builder.UniversalBot(connector);
 
-var x = "{
+var myObj  = {
     "คำร้องทั่วไป": "https://goo.gl/MWUi5Y",
     "คำร้องขอเอกสารทางการศึกษา" : "https://goo.gl/eikbr8",
-    "คำร้องขอผ่อนผัน": "https://goo.gl/yFcAZQ"}";
+    "คำร้องขอผ่อนผัน": "https://goo.gl/yFcAZQ"};
+
+var myJSON = JSON.stringify(myObj);
 
 var msg = server.post('api/messages', connector.listen());
 
 bot.dialog('/', function (session) {
     session.send("สวัสดีจ้า");
-    session.send(JSON.parse(x));
+    session.send(myJSON);
 //     if(session.message.text == "เอกสารดรอป"){
 //        session.send("y");
         
