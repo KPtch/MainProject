@@ -14,8 +14,9 @@ var connector = new builder.ChatConnector({
     appPassword: process.env.MICROSOFT_APP_PASSWORD
 });
 // var bot = new builder.UniversalBot(connector);
+
 var bot = new builder.UniversalBot(connector, function(session){
-    session.send("Hello, Welcome");
+    
     var token = tokens[session.userId];
     //How do I get the user Id here?
     if(token == undefined){
