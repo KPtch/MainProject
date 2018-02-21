@@ -20,7 +20,7 @@ var myObj  = {
     "B" : "https://goo.gl/eikbr8",
     "B": "https://goo.gl/yFcAZQ"};
 
-var myJSON = JSON.stringify(myObj);
+// var myJSON = JSON.stringify(myObj);
 
 var msg = server.post('api/messages', connector.listen());
 
@@ -31,9 +31,9 @@ bot.dialog('/', function (session) {
     
     if(session.message.text == "คำร้องทั่วไป"){
         session.send("สวัสดีจ้า2");
-        session.send(myJSON.A);
+        session.send(myObj.A);
         session.send('------------');
-        session.send(myJSON[A]);
+        session.send(myObj[A]);
      }
     
 });
