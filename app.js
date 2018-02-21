@@ -42,7 +42,7 @@ bot.dialog('/', function (session) {
     } else {
         var res = 'สวัสดีจ้าา เราคือบอท KunSri';
         question.forEach(function(questions,index){
-            res += '<br>'+ questions;
+            res += "\n"+ questions;
             session.send(res);
         });
     }           
