@@ -38,7 +38,7 @@ bot.dialog('/', function (session) {
     }
     if(resKey){
         var s = 'นี้จร้า';
-        session.send(data[resKey]);
+        session.send(s+data[resKey]);
         
     } else {
         
