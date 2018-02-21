@@ -15,7 +15,7 @@ function getQuestionList(){
        
      
 }
-function getRes(req,id){
+function getRes(req){
     var resKey = null;
     var keys = Object.keys(responseMap);
     for(var i=0; i<keys.length; i++){
@@ -35,16 +35,16 @@ function getRes(req,id){
     }
 }
 
-function handleMessage(req,id,sendMessage){
-    var response = getRes(req,id);
+function handleMessage(req){
+    var response = getRes(req);
     if(!response) response = getQuestionList();
-        
-    sendMessage(response,id).then(() =>{
-        console.log('respond to \"' + req + '\" success');
-        console.log(response);
-    }).catch(err =>{
-        console.log(err);
-    });
+    return response;
+//     sendMessage(response,id).then(() =>{
+//         console.log('respond to \"' + req + '\" success');
+//         console.log(response);
+//     }).catch(err =>{
+//         console.log(err);
+//     });
     
 }
 /* function button(key,res,id,sendMessage){
