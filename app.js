@@ -30,14 +30,11 @@ var bot = new builder.UniversalBot(connector);
 // });
 
 
-var msg = server.post('api/messages', connector.listen(),function(session){
-    var token = tokens[session.userId];
-    
-    bot.dialog('/', function (session) {
-        session.send("สวัสดีจ้า");
-        session.send(msg);
-        session.send(token);
-    });
+var msg = server.post('api/messages', connector.listen());
+
+bot.dialog('/', function (session) {
+    session.send("สวัสดีจ้า");
+    session.send(msg);
 });
 
 
