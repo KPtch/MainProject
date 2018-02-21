@@ -21,7 +21,7 @@ var msg = server.post('api/messages', connector.listen());
 
 bot.dialog('/', function (session) {
     session.send("สวัสดีจ้า");
-    if(session.message.text == เอกสารดรอป){
+    if(session.message.text == "เอกสารดรอป"){
        session.send("this is it u went https://www.youtube.com/");
        }
 });
