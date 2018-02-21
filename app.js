@@ -1,7 +1,7 @@
 
 var restify = require('restify');
 var builder = require('botbuilder');
-var respond = require('respond');
+var respond = require('./respond');
 
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function(){
@@ -20,9 +20,11 @@ var msg = server.post('api/messages', connector.listen());
 
 bot.dialog('/', function (session) {
     session.send("สวัสดีจ้า");
-    if(session.message.text == "เอกสารดรอป"){
-       session.send(respond);
-       }
+     session.send(respond);
+//     if(session.message.text == "เอกสารดรอป"){
+//        session.send("y");
+        
+//      }
     
 });
 
