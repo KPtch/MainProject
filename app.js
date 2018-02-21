@@ -3,10 +3,6 @@ var restify = require('restify');
 var builder = require('botbuilder');
 // var respond = require('./respond');
 
-var x = "{
-    "คำร้องทั่วไป": "https://goo.gl/MWUi5Y",
-    "คำร้องขอเอกสารทางการศึกษา" : "https://goo.gl/eikbr8",
-    "คำร้องขอผ่อนผัน": "https://goo.gl/yFcAZQ"}";
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function(){
     console.log('%s listening to %s', server.name, server.url);
@@ -19,12 +15,16 @@ var connector = new builder.ChatConnector({
 });
 var bot = new builder.UniversalBot(connector);
 
+var x = "{
+    "คำร้องทั่วไป": "https://goo.gl/MWUi5Y",
+    "คำร้องขอเอกสารทางการศึกษา" : "https://goo.gl/eikbr8",
+    "คำร้องขอผ่อนผัน": "https://goo.gl/yFcAZQ"}";
 
 var msg = server.post('api/messages', connector.listen());
 
 bot.dialog('/', function (session) {
     session.send("สวัสดีจ้า");
-     session.send(JSON.parse(x));
+    session.send(JSON.parse(x));
 //     if(session.message.text == "เอกสารดรอป"){
 //        session.send("y");
         
