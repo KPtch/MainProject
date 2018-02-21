@@ -1,7 +1,7 @@
 
 var restify = require('restify');
 var builder = require('botbuilder');
-// var respond = require('./respond');
+var handleMessage = require('./src/handleMessage.js');
 
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function(){
@@ -17,7 +17,7 @@ var bot = new builder.UniversalBot(connector);
 
 
 var timeout = undefined;
-var inTimeout= {};
+
 var msg = server.post('api/messages', connector.listen());
 
 var data  = {
@@ -29,19 +29,8 @@ var data  = {
 bot.dialog('/', function (session) {
     session.send("สวัสดีจ้า");
     session.send(session.message.text);
-    session.send('-----------------');
-//     session.send(session.threadID);
-// //     session.send(session.userid);
-//     session.send(session.user_id);
-//     session.send(session.user.id);
-    session.send(session.message.id);
-    session.send('-----------------');
-    
-    if(session.message.text == "คำร้องทั่วไป"){
-        session.send("นี้จร้า ^^");
-        session.send(data.A);
-     }
-    
+    var req = session.message.text;
+    handleMessage(req);
 });
 
 
