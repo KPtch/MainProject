@@ -32,6 +32,8 @@ bot.dialog('/', function (session) {
     if(session.message.text == "คำร้องทั่วไป"){
         session.send("สวัสดีจ้า2");
         session.send(myJSON.A);
+        session.send('------------');
+        session.send(myJSON[A]);
      }
     
 });
