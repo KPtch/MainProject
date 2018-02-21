@@ -32,7 +32,7 @@ bot.dialog('/', function (session) {
         var key = keys[i];
         var regex = new RegExp(key);
         if(req.match(regex)){
-            session.send('2');
+            session.send(regex);
             resKey = key;            
             break;
         }
@@ -41,7 +41,9 @@ bot.dialog('/', function (session) {
     if(resKey){
         session.send('3');
         session.send(resKey);
-        session.send(data.resKey);
+        session.send(data[resKey]);
+        session.send(data.ใบลา);
+        
     } else {
         var res = 'สวัสดีจ้าา เราคือบอท KunSri';
         question.forEach(function(questions,index){
