@@ -25,7 +25,6 @@ var msg = server.post('api/messages', connector.listen());
 bot.dialog('/', function (session) {
     
     var req = session.message.text;
-    session.send('1');
     var resKey = null;
     var keys = Object.keys(data);
     for(var i=0; i<keys.length; i++){
