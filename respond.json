@@ -1,37 +1,64 @@
 {
-    "คำร้องทั่วไป": "https://reg.src.ku.ac.th/student/news/kamrong/1%20%E0%B8%84%E0%B8%B3%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%97%E0%B8%B1%E0%B9%88%E0%B8%A7%E0%B9%84%E0%B8%9B.pdf",
-    "คำร้องขอเอกสารทางการศึกษา" : "https://reg.src.ku.ac.th/student/news/kamrong/%E0%B8%82%E0%B8%AD%E0%B9%80%E0%B8%AD%E0%B8%81%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A8%E0%B8%B6%E0%B8%81%E0%B8%A9%E0%B8%B2-new%20(1).pdf",
-    "คำร้องขอผ่อนผัน": "https://reg.src.ku.ac.th/student/news/kamrong/3%20%E0%B8%82%E0%B8%AD%E0%B8%9C%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B8%9C%E0%B8%B1%E0%B8%99(%E0%B9%81%E0%B8%81%E0%B9%89%E0%B9%84%E0%B8%82).pdf",
-    "คำร้องของดเรียนเหลือต่ำกว่า9หน่วย": "https://reg.src.ku.ac.th/student/news/kamrong/4%20%E0%B8%84%E0%B8%B3%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B8%94%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B9%80%E0%B8%AB%E0%B8%A5%E0%B8%B7%E0%B8%AD%E0%B8%95%E0%B9%88%E0%B8%B3%E0%B8%81%E0%B8%A7%E0%B9%88%E0%B8%B2%209%20%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%A7%E0%B8%A2.pdf",
-    "ขอเรียนต่ำกว่า9หน่วยปีสุดท้าย": "https://reg.src.ku.ac.th/student/news/kamrong/5%20%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%95%E0%B9%88%E0%B8%B3%E0%B8%81%E0%B8%A7%E0%B9%88%E0%B8%B2%209%20%E0%B8%AB%E0%B8%99%E0%B9%88%E0%B8%A7%E0%B8%A2(%E0%B8%9B%E0%B8%B5%E0%B8%AA%E0%B8%B8%E0%B8%94%E0%B8%97%E0%B9%89%E0%B8%B2%E0%B8%A2).pdf",
-    "คำร้องขอเรียนเกิน-ต่ำ": "https://reg.src.ku.ac.th/student/news/kamrong/6%20%E0%B8%84%E0%B8%B3%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B9%80%E0%B8%81%E0%B8%B4%E0%B8%99%20-%20%E0%B8%95%E0%B9%88%E0%B8%B3.pdf",
-    "คำร้องขอRegrade": "https://reg.src.ku.ac.th/student/news/kamrong/7%20%E0%B8%84%E0%B8%B3%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%82%E0%B8%AD%20Regrade.pdf",
-    "คำร้องขอลงทะเบียนเรียนAudit": "https://reg.src.ku.ac.th/student/news/kamrong/8%20%E0%B8%84%E0%B8%B3%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B8%A5%E0%B8%87%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%20Audit.pdf",
-    "คำร้องขอเรียนข้ามวิทยาเขต": "https://reg.src.ku.ac.th/student/news/kamrong/9%20%E0%B8%84%E0%B8%B3%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%82%E0%B9%89%E0%B8%B2%E0%B8%A1%20%E0%B8%A7%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B9%80%E0%B8%82%E0%B8%95.pdf",
-    "ขอลงทะเบียนเรียนล่าช้า": "https://reg.src.ku.ac.th/student/news/kamrong/10%20%E0%B8%82%E0%B8%AD%E0%B8%A5%E0%B8%87%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%A5%E0%B9%88%E0%B8%B2%E0%B8%8A%E0%B9%89%E0%B8%B2.pdf",
-    "ขอคืนเงิน": "https://reg.src.ku.ac.th/student/news/kamrong/11%20%E0%B8%82%E0%B8%AD%E0%B8%84%E0%B8%B7%E0%B8%99%E0%B9%80%E0%B8%87%E0%B8%B4%E0%B8%99(%E0%B9%81%E0%B8%81%E0%B9%89%E0%B9%84%E0%B8%82).pdf",
-    "ขอย้ายคณะ": "https://reg.src.ku.ac.th/student/news/kamrong/12%20%E0%B8%82%E0%B8%AD%E0%B8%A2%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%84%E0%B8%93%E0%B8%B0.pdf",
-    "ขอย้ายสาขา": "https://reg.src.ku.ac.th/student/news/kamrong/13%20%E0%B8%82%E0%B8%AD%E0%B8%A2%E0%B9%89%E0%B8%B2%E0%B8%A2%E0%B8%AA%E0%B8%B2%E0%B8%82%E0%B8%B2.pdf",
-    "ขอเทียบรายวิชา": "https://reg.src.ku.ac.th/student/news/kamrong/14%20%E0%B8%82%E0%B8%AD%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B8%A2%E0%B8%9A%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A7%E0%B8%B4%E0%B8%8A%E0%B8%B2.pdf",
-    "ขอเทียบโอนรายวิชา": "https://reg.src.ku.ac.th/student/news/kamrong/15%20%E0%B8%82%E0%B8%AD%E0%B9%80%E0%B8%97%E0%B8%B5%E0%B8%A2%E0%B8%9A%E0%B9%82%E0%B8%AD%E0%B8%99%E0%B8%A3%E0%B8%B2%E0%B8%A2%E0%B8%A7%E0%B8%B4%E0%B8%8A%E0%B8%B2.pdf",
-    "ขอเรียนควบ": "https://reg.src.ku.ac.th/student/news/kamrong/16%20%E0%B8%82%E0%B8%AD%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%84%E0%B8%A7%E0%B8%9A.pdf",
-    "ขอสอบชดใช้กรณีป่วย": "https://reg.src.ku.ac.th/student/news/kamrong/17%20%E0%B8%82%E0%B8%AD%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%8A%E0%B8%94%E0%B9%83%E0%B8%8A%E0%B9%89(%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B8%B5%E0%B8%9B%E0%B9%88%E0%B8%A7%E0%B8%A2).pdf",
-    "ขอสอบชดใช้": "https://reg.src.ku.ac.th/student/news/kamrong/18%20%E0%B8%82%E0%B8%AD%E0%B8%AA%E0%B8%AD%E0%B8%9A%E0%B8%8A%E0%B8%94%E0%B9%83%E0%B8%8A%E0%B9%89.pdf",
-    "ขอลาพักการศึกษา": "https://reg.src.ku.ac.th/student/news/kamrong/19%20%E0%B8%82%E0%B8%AD%E0%B8%A5%E0%B8%B2%E0%B8%9E%E0%B8%B1%E0%B8%81%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A8%E0%B8%B6%E0%B8%81%E0%B8%A9%E0%B8%B2.pdf",
-    "ขอรักษาสถานภาพนิสิต": "https://reg.src.ku.ac.th/student/news/kamrong/20%20%E0%B8%82%E0%B8%AD%E0%B8%A3%E0%B8%B1%E0%B8%81%E0%B8%A9%E0%B8%B2%E0%B8%AA%E0%B8%96%E0%B8%B2%E0%B8%99%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%99%E0%B8%B4%E0%B8%AA%E0%B8%B4%E0%B8%95.pdf",
-    "ขอคืนสภาพนิสิต": "https://reg.src.ku.ac.th/student/news/kamrong/21%20%E0%B8%82%E0%B8%AD%E0%B8%84%E0%B8%B7%E0%B8%99%E0%B8%AA%E0%B8%A0%E0%B8%B2%E0%B8%9E%E0%B8%99%E0%B8%B4%E0%B8%AA%E0%B8%B4%E0%B8%95.pdf",
-    "ลาออก": "https://reg.src.ku.ac.th/student/news/kamrong/23%20%E0%B8%82%E0%B8%AD%E0%B8%A5%E0%B8%B2%E0%B8%AD%E0%B8%AD%E0%B8%81.pdf",
-    "ประกันของเสียหาย": "https://reg.src.ku.ac.th/student/news/kamrong/24%20%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%81%E0%B8%B1%E0%B8%99%E0%B8%82%E0%B8%AD%E0%B8%87%E0%B9%80%E0%B8%AA%E0%B8%B5%E0%B8%A2%E0%B8%AB%E0%B8%B2%E0%B8%A2%20(%E0%B9%81%E0%B8%81%E0%B9%89%E0%B9%84%E0%B8%82).pdf",
-    "ใบลา": "https://reg.src.ku.ac.th/student/news/kamrong/25%20%E0%B9%83%E0%B8%9A%E0%B8%A5%E0%B8%B2.pdf",
-    "ขอเปลี่ยนเเปลงชื่อ-สกุล": "https://reg.src.ku.ac.th/student/news/kamrong/28%20%E0%B8%82%E0%B8%AD%E0%B9%80%E0%B8%9B%E0%B8%A5%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%99%E0%B9%81%E0%B8%9B%E0%B8%A5%E0%B8%87%E0%B8%8A%E0%B8%B7%E0%B9%88%E0%B8%AD-%E0%B8%AA%E0%B8%81%E0%B8%B8%E0%B8%A5.pdf",
-    "ขอเปลี่ยนเเปลงที่อยู่ผู้ปกครอง": "https://reg.src.ku.ac.th/student/news/kamrong/29%20%E0%B8%82%E0%B8%AD%E0%B9%80%E0%B8%9B%E0%B8%A5%E0%B8%B5%E0%B9%88%E0%B8%A2%E0%B8%99%E0%B9%81%E0%B8%9B%E0%B8%A5%E0%B8%87%E0%B8%97%E0%B8%B5%E0%B8%AD%E0%B8%A2%E0%B8%B9%E0%B9%88%E0%B8%9C%E0%B8%B9%E0%B9%89%E0%B8%9B%E0%B8%81%E0%B8%84%E0%B8%A3%E0%B8%AD%E0%B8%87.pdf",
-    "คำร้องขอลงทะเบียนเรียนกรณีเกรดต่ำกว่า2": "https://reg.src.ku.ac.th/student/news/kamrong/30%20%E0%B8%84%E0%B8%B3%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%82%E0%B8%AD%E0%B8%A5%E0%B8%87%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%81%E0%B8%A3%E0%B8%93%E0%B8%B5%E0%B9%80%E0%B8%81%E0%B8%A3%E0%B8%94%E0%B8%95%E0%B9%88%E0%B8%B3%E0%B8%81%E0%B8%A7%E0%B9%88%E0%B8%B2%202.00.pdf",
-    "ขอลงทะเบียนเรียน-ปรับปรุง": "https://reg.src.ku.ac.th/student/news/kamrong/31%20%E0%B8%82%E0%B8%AD%E0%B8%A5%E0%B8%87%E0%B8%97%E0%B8%B0%E0%B9%80%E0%B8%9A%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99-%E0%B8%9B%E0%B8%A3%E0%B8%B1%E0%B8%9A%E0%B8%9B%E0%B8%A3%E0%B8%B8%E0%B8%87.pdf",
+    "คำร้องทั่วไป": "https://goo.gl/nRhj1p",
+    "คำร้องขอเอกสารทางการศึกษา" : "https://goo.gl/egQGnj",
+  
+    "คำร้องขอผ่อนผัน": "https://goo.gl/MhHcju",
    
+    "คำร้องของดเรียนเหลือต่ำกว่า9หน่วย": "https://goo.gl/CFSPhA",
+   
+    "ขอเรียนต่ำกว่า9หน่วยปีสุดท้าย": "https://goo.gl/yF79w6",
+   
+    "คำร้องขอเรียนเกิน-ต่ำ": "https://goo.gl/b797xi",
+   
+    "คำร้องขอRegrade": "https://goo.gl/GnVkpa",
     
+    "คำร้องขอลงทะเบียนเรียนAudit": "https://goo.gl/DQEqqe",
+   
+    "คำร้องขอเรียนข้ามวิทยาเขต": "https://goo.gl/sKNawD",
+    
+    "ขอลงทะเบียนเรียนล่าช้า": "https://goo.gl/xNvS5Y",
+   
+    "ขอคืนเงิน": "https://goo.gl/t6AwL9",
+   
+    "ขอย้ายคณะ": "https://goo.gl/uN9WEn",
+    
+    "ขอย้ายสาขา": "https://goo.gl/ae4sw5",
+   
+    "ขอเทียบรายวิชา": "https://goo.gl/6ugPyJ",
+   
+    "ขอเทียบโอนรายวิชา": "https://goo.gl/KYfGLW",
+   
+    "ขอเรียนควบ": "https://goo.gl/ECeghV",
+   
+    "ขอสอบชดใช้กรณีป่วย": "https://goo.gl/Cc1Xrh",
+    
+    "ขอสอบชดใช้": "https://goo.gl/hYW2QG",
+    
+    "ขอลาพักการศึกษา": "https://goo.gl/26CkZ1",
+   
+    "ขอรักษาสถานภาพนิสิต": "https://goo.gl/NwtUQR",
+  
+    "ขอคืนสภาพนิสิต": "https://goo.gl/1e5Vpv",
+   
+    "ลาออก": "https://goo.gl/9UH8Qk",
+  
+    "ประกันของเสียหาย": "https://goo.gl/Bxb48U",
+   
+    "ใบลา": "https://goo.gl/Tr2oRU",
+   
+    "ขอเปลี่ยนเเปลงชื่อ-สกุล": "https://goo.gl/kP5ofw",
+    
+    "ขอเปลี่ยนเเปลงที่อยู่ผู้ปกครอง": "https://goo.gl/216MyV",
+   
+    "คำร้องของทะเบียนเรียนกรณีเกรดต่ำกว่า2": "https://goo.gl/bLMyFd",
+    
+    "ขอลงทะเบียนเรียน-ปรับปรุง": "https://goo.gl/xuLvgY",
+   
 
 
 
+    
+    
     "ทั่วไป": "https://reg.src.ku.ac.th/student/news/kamrong/1%20%E0%B8%84%E0%B8%B3%E0%B8%A3%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%97%E0%B8%B1%E0%B9%88%E0%B8%A7%E0%B9%84%E0%B8%9B.pdf",
     "เอกสารทางการศึกษา" : "https://reg.src.ku.ac.th/student/news/kamrong/%E0%B8%82%E0%B8%AD%E0%B9%80%E0%B8%AD%E0%B8%81%E0%B8%AA%E0%B8%B2%E0%B8%A3%E0%B8%97%E0%B8%B2%E0%B8%87%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%A8%E0%B8%B6%E0%B8%81%E0%B8%A9%E0%B8%B2-new%20(1).pdf",
     "ผ่อนผัน": "https://reg.src.ku.ac.th/student/news/kamrong/3%20%E0%B8%82%E0%B8%AD%E0%B8%9C%E0%B9%88%E0%B8%AD%E0%B8%99%E0%B8%9C%E0%B8%B1%E0%B8%99(%E0%B9%81%E0%B8%81%E0%B9%89%E0%B9%84%E0%B8%82).pdf",
