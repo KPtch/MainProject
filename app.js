@@ -1,4 +1,3 @@
-
 var restify = require('restify');
 var builder = require('botbuilder');
 var data = require('./respond.json');
@@ -38,35 +37,7 @@ bot.dialog('/', function (session) {
     }
     if(resKey){
         var s = 'นี้จ้า'+"\n";
-        var btn = {
-            "attachment":{
-              "type":"template",
-              "payload":{
-                "template_type":"generic",
-                  "elements":[{
-                "title":"ต้องการเอกสารนี้ไหม?",
-                "buttons":[
-                  {
-                    "type":"postback",
-                    "url":"https://medium.com/@iamcmnut/howto-%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87-facebook-chatbot-%E0%B9%80%E0%B8%9A%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%95%E0%B9%89%E0%B8%99-%E0%B9%81%E0%B8%9A%E0%B8%9A-step-by-step-6b3d4ab6f714",
-                    "title":"ใบลา"
-                    
-                  },
-                  {
-                    "type":"postback",
-                    "url":"https://medium.com/@iamcmnut/howto-%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87-facebook-chatbot-%E0%B9%80%E0%B8%9A%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%95%E0%B9%89%E0%B8%99-%E0%B9%81%E0%B8%9A%E0%B8%9A-step-by-step-6b3d4ab6f714",
-                    "title":"คำแนะนำ"
-                  }
-                  
-                ]
-                  }
-             ]
-              }
-            }
-          
-        
-    }
-        session.send(s+btn);
+        session.send(s+data[resKey]);
         
     } else {
         
@@ -79,6 +50,11 @@ bot.dialog('/', function (session) {
     }           
            
 });
+
+
+
+
+
 
 
 
