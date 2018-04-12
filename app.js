@@ -43,7 +43,8 @@ bot.dialog('/', function (session) {
               "type":"template",
               "payload":{
                 "template_type":"generic",
-                "text":"ต้องการเอกสารนี้ไหม?",
+                  "elements":[{
+                "title":"ต้องการเอกสารนี้ไหม?",
                 "buttons":[
                   {
                     "type":"web_url",
@@ -58,6 +59,8 @@ bot.dialog('/', function (session) {
                   }
                   
                 ]
+                  }
+             ]
               }
             }
           
