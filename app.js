@@ -47,13 +47,13 @@ bot.dialog('/', function (session) {
                 "title":"ต้องการเอกสารนี้ไหม?",
                 "buttons":[
                   {
-                    "type":"web_url",
+                    "type":"postback",
                     "url":"https://medium.com/@iamcmnut/howto-%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87-facebook-chatbot-%E0%B9%80%E0%B8%9A%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%95%E0%B9%89%E0%B8%99-%E0%B9%81%E0%B8%9A%E0%B8%9A-step-by-step-6b3d4ab6f714",
                     "title":"ใบลา"
                     
                   },
                   {
-                    "type":"web_url",
+                    "type":"postback",
                     "url":"https://medium.com/@iamcmnut/howto-%E0%B8%81%E0%B8%B2%E0%B8%A3%E0%B8%AA%E0%B8%A3%E0%B9%89%E0%B8%B2%E0%B8%87-facebook-chatbot-%E0%B9%80%E0%B8%9A%E0%B8%B7%E0%B9%89%E0%B8%AD%E0%B8%87%E0%B8%95%E0%B9%89%E0%B8%99-%E0%B9%81%E0%B8%9A%E0%B8%9A-step-by-step-6b3d4ab6f714",
                     "title":"คำแนะนำ"
                   }
