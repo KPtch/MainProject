@@ -48,14 +48,13 @@ bot.dialog('/', function (session) {
                   {
                     "type":"web_url",
                     "url":data[resKey],
-                    "title":"ใบลา",
-                    "payload":"ลา"
+                    "title":"ใบลา"
+                    
                   },
                   {
                     "type":"web_url",
                     "url":data[resKey],
-                    "title":"คำแนะนำ",
-                    "payload":"คำแนะนำ"
+                    "title":"คำแนะนำ"
                   }
                   
                 ]
