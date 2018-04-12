@@ -42,7 +42,7 @@ bot.dialog('/', function (session) {
             "attachment":{
               "type":"template",
               "payload":{
-                "template_type":"button",
+                "template_type":"generic",
                 "text":"ต้องการเอกสารนี้ไหม?",
                 "buttons":[
                   {
