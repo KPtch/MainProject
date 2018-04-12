@@ -38,7 +38,33 @@ bot.dialog('/', function (session) {
     }
     if(resKey){
         var s = 'นี้จ้า'+"\n";
-        session.send(s+data[resKey]);
+        var btn = {
+            "attachment":{
+              "type":"template",
+              "payload":{
+                "template_type":"button",
+                "text":"ต้องการเอกสารนี้ไหม?",
+                "buttons":[
+                  {
+                    "type":"web_url",
+                    "url":data[resKey],
+                    "title":"ใบลา",
+                    "payload":"ลา"
+                  },
+                  {
+                    "type":"web_url",
+                    "url":data[resKey],
+                    "title":"คำแนะนำ",
+                    "payload":"คำแนะนำ"
+                  }
+                  
+                ]
+              }
+            }
+          
+        
+    }
+        session.send(s+btn);
         
     } else {
         
