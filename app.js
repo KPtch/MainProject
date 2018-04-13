@@ -37,15 +37,16 @@ bot.dialog('/', function (session) {
     }
     if(resKey){
         var s = 'นี้จ้า'+"\n";
-        var btn = new builder.Message()
-         .addAttachment([{
-            text: "Soft white cotton t-shirt is back in style",
-            actions:([
-                { title: "ใบคำร้อง", url: "https://www.facebook.com/gl0vep" },
-                { title: "คำแนะนำ", url: "https://www.facebook.com/gl0vep" }
-            ])
-        }]);
-        session.send(s+btn+"\n"+data[resKey]);
+        var btn = new builder.Message();
+        msg.addAttachment({
+            title: "ต้องการเอกสารนี้ใช่ไหม ?",
+            actions: [
+                { title: "ใบคำร้อง", url: "https://www.facebook.com/" },
+                { title: "คำแนะนำ", message: "buy:100" }
+            ]
+        });
+        session.send(btn);
+//         session.send(s+btn+"\n"+data[resKey]);
         
     } else {
         
