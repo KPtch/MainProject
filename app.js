@@ -47,7 +47,7 @@ bot.dialog('/', function (session) {
                     ])
         });
         session.send(btn);
-//         session.send(s+btn+"\n"+data[resKey]);
+        session.send("\n"+"\n"+"\n"+data[resKey]);
         
     } else {
         
