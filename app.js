@@ -37,13 +37,14 @@ bot.dialog('/', function (session) {
     }
     if(resKey){
         var s = 'นี้จ้า'+"\n";
-        var btn = new builder.Message();
-        msg.addAttachment({
-            title: "ต้องการเอกสารนี้ใช่ไหม ?",
-            actions: [
-                { title: "ใบคำร้อง", url: "https://www.facebook.com/" },
-                { title: "คำแนะนำ", message: "buy:100" }
-            ]
+        var btn = new builder.Message(session)
+        .addAttachment({
+            new builder.HeroCard(session)
+                    .title("เอกสารนี้ใช่ไหม")
+                    .buttons([
+                        builder.CardAction.openUrl(session, "https://www.facebook.com", "ใบคำร้อง"),
+                        builder.CardAction.openUrl(session, "https://www.facebook.com", "คำแนะนำ")
+                    ])
         });
         session.send(btn);
 //         session.send(s+btn+"\n"+data[resKey]);
