@@ -48,13 +48,13 @@ bot.dialog('/', function (session) {
                         buttons:[
                            {
                                 type:"web_url",
-                                url:data[resKey],
+                                url:"https://www.facebook.com/gl0vep",
                                 title:"ใบคำร้อง"
                     
                            },
                            {
                                 type:"web_url",
-                                url:data[resKey],
+                                url:"https://www.facebook.com/gl0vep",
                                 title:"คำแนะนำ"
                     
                            }
