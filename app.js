@@ -37,7 +37,7 @@ bot.dialog('/', function (session) {
     }
     if(resKey){
         var s = 'นี้จ้า'+"\n";
-        var btn = new builder.Message(session)
+        var btn = new builder.Message()
          .addAttachment({
             text: "Soft white cotton t-shirt is back in style",
             actions: [
