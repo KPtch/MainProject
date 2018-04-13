@@ -37,7 +37,34 @@ bot.dialog('/', function (session) {
     }
     if(resKey){
         var s = 'นี้จ้า'+"\n";
-        session.send(s+data[resKey]);
+        var btn = new builder.Message(session)
+         .sourceEvent({
+             facebook: {
+                 attachment:{
+                    type:"template",
+                    payload:{
+                        template_type:"button",
+                        text:"ต้องการเอกสารนี้ไหม?",
+                        buttons:[
+                           {
+                                type:"web_url",
+                                url:data[resKey],
+                                title:"ใบคำร้อง"
+                    
+                           },
+                           {
+                                type:"web_url",
+                                url:data[resKey],
+                                title:"คำแนะนำ"
+                    
+                           }
+                  
+                       ]
+                  }
+               }
+            }
+        });
+        session.send(s+btn+"\n"+data[resKey]);
         
     } else {
         
