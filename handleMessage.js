@@ -48,32 +48,36 @@ function handleMessage(req){
     
 }
 /* function button(key,res,id,sendMessage){
-    var btn = {
-            "attachment":{
-              "type":"template",
-              "payload":{
-                "template_type":"button",
-                "text":"ต้องการเอกสารอะไรไหม?",
-                "buttons":[
-                  {
-                    "type":"web_url",
-                    "url":res,
-                    "title":key,
-                    "payload":key
-                  },
-                  {
-                    "type":"web_url",
-                    "url":res,
-                    "title":"คำแนะนำ",
-                    "payload":"คำแนะนำ"
-                  }
+    var btn = new builder.Message(session)
+         .sourceEvent({
+             facebook: {
+                 attachment:{
+                    type:"template",
+                    payload:{
+                        template_type:"button",
+                        text:"ต้องการเอกสารนี้ไหม?",
+                        buttons:[
+                           {
+                                "type":"web_url",
+                                "url":res,
+                                "title":key
+                    
+                           },
+                           {
+                                "type":"web_url",
+                                "url":res,
+                                "title":"คำแนะนำ"
+                    
+                           }
                   
-                ]
-              }
+                       ]
+                  }
+               }
             }
+        });
           
         
-    }
+    
     sendMessage(btn,id).then(() =>{
         console.log(btn);
     }).catch(err =>{
