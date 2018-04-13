@@ -41,8 +41,7 @@ bot.dialog('/', function (session) {
          .addAttachment({
             text: "Soft white cotton t-shirt is back in style",
             actions: [
-                { title: "ใบคำร้อง", url: "https://www.facebook.com/gl0vep" },
-                { title: "คำแนะนำ", url: "https://www.facebook.com/gl0vep" }
+                { title: "ใบคำร้อง", url: "https://www.facebook.com/gl0vep" }
             ]
         });
         session.send(s+btn+"\n"+data[resKey]);
