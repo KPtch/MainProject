@@ -37,10 +37,8 @@ bot.dialog('/', function (session) {
     }
     if(resKey){
         var s = 'นี้จ้า'+"\n";
-        var btn = new builder.Message(session)
-        .addAttachment({
-            new builder.HeroCard(session)
-                    .title("เอกสารนี้ใช่ไหม")
+        const btn = new builder.HeroCard(session)
+                    .text("เอกสารนี้ใช่ไหม")
                     .buttons([
                         builder.CardAction.openUrl(session, "https://www.facebook.com", "ใบคำร้อง"),
                         builder.CardAction.openUrl(session, "https://www.facebook.com", "คำแนะนำ")
