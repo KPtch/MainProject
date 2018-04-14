@@ -38,12 +38,12 @@ bot.dialog('/', function (session) {
     if(resKey){
         var s = 'นี้จ้า'+"\n";
         const btn = new builder.HeroCard(session)
-                    .text("เอกสารนี้ใช่ไหม")
+                    .text('เอกสารนี้ใช่ไหม')
                     .buttons([
                         builder.CardAction.openUrl(session, "https://www.facebook.com", "ใบคำร้อง"),
-                        builder.CardAction.openUrl(session, "https://www.facebook.com", "คำแนะนำ")
-                    ])
-        });
+                        builder.CardAction.openUrl(session, "https://www.facebook.com", "คำแนะนำ"),
+                    ]);
+        
         session.send(btn);
         session.send("\n"+"\n"+"\n"+data[resKey]);
         
