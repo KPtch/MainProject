@@ -2,7 +2,7 @@ var restify     = require('restify');
 var builder     = require('botbuilder');
 var data        = require('./respond.json');
 var question    = require('./question.json');
-
+var firebase    = require('firebase');
 
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function(){
@@ -43,18 +43,18 @@ bot.dialog('/', function (session) {
 //     session.send("The read failed: " + errorObject.code);
 //   });  
     //******
-    var firebase    = require('firebase');
-    firebase.initializeApp({
-        databaseURL: 'https://ksbot-test.firebaseio.com/',
-        serviceAccount: 'ksbot-test-dec.json', //this is file that I downloaded from Firebase Console
-    });
+    
+//     firebase.initializeApp({
+//         databaseURL: 'https://ksbot-test.firebaseio.com/',
+//         serviceAccount: 'ksbot-test-dec.json', //this is file that I downloaded from Firebase Console
+//     });
 
-    var ref = firebase.database().ref();
-    var data;
-    ref.on("value", function (snapshot) {
-        data  = snapshot.val();
-        session.send(data);
-    });
+//     var ref = firebase.database().ref();
+//     var data;
+//     ref.on("value", function (snapshot) {
+//         data  = snapshot.val();
+//         session.send(data);
+//     });
     
     session.send("hello");
     var req = session.message.text;
