@@ -31,19 +31,20 @@ function firebase(){
     ref.on("value", function (snapshot) {
         data  = snapshot.val();
     });
+    return data;
 }
 
 
 bot.dialog('/', function (session) {
     
     
-    
-//     var ans='';
-//     for(var i=0; i<data.length; i++){
-//         res += "\n"+data[i].key+"\n"+data[i].link+"\n"+data[i].comment;
-//     }
-//     session.send(ans);
-//     session.send("-------------------------------------------------");
+    var data = firebase();
+    var ans='';
+    for(var i=0; i<data.length; i++){
+        res += "\n"+data[i].key+"\n"+data[i].link+"\n"+data[i].comment;
+    }
+    session.send(ans);
+    session.send("-------------------------------------------------");
     session.send("hello");
     var req = session.message.text;
     var resKey = null;
