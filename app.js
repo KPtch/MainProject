@@ -24,10 +24,25 @@ var msg = server.post('api/messages', connector.listen());
 
 bot.dialog('/', function (session) {
     
-//     var firebase    = require('firebase');
-    
-    
-    
+    var firebase    = require('firebase');
+    var firebase = require('firebase');
+    firebase.initializeApp({
+        databaseURL: 'https://ksbot-test.firebaseio.com/',
+        serviceAccount: 'ksbot-test-dec.json', //this is file that I downloaded from Firebase Console
+    });
+
+    var ref = firebase.database().ref();
+    var data;
+    ref.on("value", function (snapshot) {
+        data  = snapshot.val();
+        console.log();
+    });
+    var ans="";
+    for(var i=0; i<data.length; i++){
+        res += "\n"+data[i].key+"\n"+data[i].link+"\n"+data[i].comment;
+    }
+    session.send(ans);
+    session.send("-------------------------------------------------");
     session.send("hello");
     var req = session.message.text;
     var resKey = null;
