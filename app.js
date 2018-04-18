@@ -3,7 +3,7 @@ var restify     = require('restify');
 var builder     = require('botbuilder');
 var data        = require('./respond.json');
 var question    = require('./question.json');
-
+var firebase    = require('firebase');
 
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function(){
@@ -24,7 +24,7 @@ var msg = server.post('api/messages', connector.listen());
 bot.dialog('/', function (session) {
     
     
-    var firebase    = require('firebase');
+    
     firebase.initializeApp({
         serviceAccount: "./ksbot-test-dec.json",
         databaseURL: "https://ksbot-test.firebaseio.com/" 
