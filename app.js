@@ -1,3 +1,4 @@
+"use strict";
 var restify     = require('restify');
 var builder     = require('botbuilder');
 var data        = require('./respond.json');
@@ -23,7 +24,10 @@ var msg = server.post('api/messages', connector.listen());
 
 bot.dialog('/', function (session) {
     
-   
+    var firebase    = require('firebase');
+    
+    
+    
     session.send("hello");
     var req = session.message.text;
     var resKey = null;
