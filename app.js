@@ -61,9 +61,9 @@ bot.dialog('/', function (session) {
                         builder.CardAction.openUrl(session, 'https://www.facebook.com/gl0vep', 'คำแนะนำ')
                     ]);
         
-        session.send(s+btn);
+//         session.send(s+btn);
 //         session.sendTyping(s+btn);
-//         session.sendTyping(s);
+        session.sendTyping(s);
         
 //     } else if(resKey1){
 //         var text;
