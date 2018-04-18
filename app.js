@@ -19,13 +19,13 @@ var bot = new builder.UniversalBot(connector);
 
 var msg = server.post('api/messages', connector.listen());
 
-var firebase    = require('firebase');
+
 
 
 
 
 bot.dialog('/', function (session) {
-        
+    var firebase    = require('firebase');    
     firebase.initializeApp({
         serviceAccount: './ksbot-test-dec92a31defe.json',
         databaseURL: 'https://ksbot-test.firebaseio.com/'
