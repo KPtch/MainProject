@@ -1,7 +1,9 @@
 var restify = require('restify');
 var builder = require('botbuilder');
+// var builder_face = require('botbuilder-facebook');
 var data = require('./respond.json');
 var question = require('./question.json');
+// var question = require('./question.json');
 
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function(){
@@ -23,6 +25,7 @@ var msg = server.post('api/messages', connector.listen());
 
 bot.dialog('/', function (session) {
     
+//     คำถูกต้องกัยคำใกล้เคียง
     var req = session.message.text;
     var resKey = null;
     var keys = Object.keys(data);
@@ -35,6 +38,20 @@ bot.dialog('/', function (session) {
         }
         
     }
+    
+//     คำที่เป็นได้หลายใบ
+    var resKey1 = null;
+//     var keys1 = Object.keys(....json....);
+//     for(var i=0; i<keys1.length; i++){
+//         var key1 = keys1[i];
+//         var regex1 = new RegExp(key1);
+//         if(req.match(regex1)){
+//             resKey1 = key1;            
+//             break;
+//         }
+        
+//     }
+    
     if(resKey){
         var s = 'นี้จ้า'+"\n";
         const btn = new builder.HeroCard(session)
@@ -45,7 +62,24 @@ bot.dialog('/', function (session) {
                     ]);
         
         session.send(btn);
-        session.send("\n"+"\n"+"\n"+data[resKey]);
+        session.send("\n"+data[resKey]);
+        
+//     } else if(resKey1){
+//         var text;
+//         switch(resKey1) {
+//             case "ใบลา":
+//                 text = ;
+//             break;
+//             case "เทียบโอน":
+//                 text = ;
+//             break;
+//             case "":
+//                 text = ;
+//             break;
+//             default:
+//                 text = ;
+//         }
+//         session.send(text);
         
     } else {
         
