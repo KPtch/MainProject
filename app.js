@@ -17,23 +17,8 @@ var question = require('./question.json');
 //     data  = snapshot.val();
 //     console.log(data);
 // });
-//------------------
-var admin = require('firebase-admin');
-var serviceAccount = require('path/to/ksbot-test-dec.json');
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: 'https://ksbot-test.firebaseio.com/'
-});
+//*****
 
-// var data_firebase;
-// var db = admin.database();
-// var ref = db.ref();
-
-// ref.on("value", function(snapshot) {
-//   data_firebase = snapshot.val();
-// }, function (errorObject) {
-//   console.log("The read failed: " + errorObject.code);
-// });
 
 // ----------------------------------
 var server = restify.createServer();
@@ -56,9 +41,24 @@ var msg = server.post('api/messages', connector.listen());
 
 bot.dialog('/', function (session) {
     
-    
-    session.send("hello");
-//     session.send(data_firebase[0].key);
+  var admin = require('firebase-admin');
+  var serviceAccount = require('path/to/ksbot-test-dec.json');
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: 'https://ksbot-test.firebaseio.com/'
+  });
+
+  // var data_firebase;
+  // var db = admin.database();
+  // var ref = db.ref();
+
+  // ref.on("value", function(snapshot) {
+  //   data_firebase = snapshot.val();
+  // }, function (errorObject) {
+  //   console.log("The read failed: " + errorObject.code);
+  // });  
+      session.send("hello");
+  //     session.send(data_firebase[0].key);
     var req = session.message.text;
     var resKey = null;
     var keys = Object.keys(data);
