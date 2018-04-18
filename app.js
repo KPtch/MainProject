@@ -31,14 +31,14 @@ bot.dialog('/', function (session) {
         databaseURL: 'https://ksbot-test.firebaseio.com/'
     });
     var ref = firebase.database().ref();
-    var data;
+    var ez;
     ref.on("value", function (snapshot) {
-        data  = snapshot.val();
+        ez  = snapshot.val();
     });
     
     var ans='';
-    for(var i=0; i<data.length; i++){
-        ans += "\n"+data[i].key+"\n"+data[i].link+"\n"+data[i].comment;
+    for(var i=0; i<ez.length; i++){
+        ans += "\n"+ez[i].key+"\n"+ez[i].link+"\n"+ez[i].comment;
     }
     session.send(ans);
     session.send("-------------------------------------------------");
