@@ -20,16 +20,16 @@ var bot = new builder.UniversalBot(connector);
 
 
 var msg = server.post('api/messages', connector.listen());
-
-
-bot.dialog('/', function (session) {
-    
-    var firebase    = require('firebase-admin');
+var firebase    = require('firebase-admin');
     var serviceAccount = require('path/to/ksbot-test-dec.json');
     firebase.initializeApp({
         databaseURL: 'https://ksbot-test.firebaseio.com/',
         credential: admin.credential.cert(serviceAccount)
     });
+
+bot.dialog('/', function (session) {
+    
+    
 
     var ref = firebase.database().ref();
     var data;
