@@ -2,6 +2,7 @@ var restify     = require('restify');
 var builder     = require('botbuilder');
 var data        = require('./respond.json');
 var question    = require('./question.json');
+var config_firebase    = require('./config_firebase');
 
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function(){
@@ -20,19 +21,6 @@ var timeout = undefined;
 
 var msg = server.post('api/messages', connector.listen());
 
-
-//-------------------------------------
-var admin = require("firebase-admin");
-
-var serviceAccount = require("ksbot-test-dec.json.json");
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://ksbot-test.firebaseio.com"
-});
-
-
-//-----------------
 
 bot.dialog('/', function (session) {
     
