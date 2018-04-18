@@ -22,41 +22,36 @@ var msg = server.post('api/messages', connector.listen());
 
 
 bot.dialog('/', function (session) {
-    setTimeout(function(){ session.send("Hellooo") }, 500);
-    session.send("Hello");
+
+
     var req = session.message.text;
-    session.send(req);
+    var resKey = null;
     var keys = Object.keys(data);
-    session.send(keys);
-    
-//     var req = session.message.text;
-//     var resKey = null;
-//     var keys = Object.keys(data);
-//     for(var i=0; i<keys.length; i++){
-//         var key = keys[i];
-//         var regex = new RegExp(key);
-//         if(req.match(regex)){
-//             resKey = key;            
-//             break;
-//         }
+    for(var i=0; i<keys.length; i++){
+        var key = keys[i];
+        var regex = new RegExp(key);
+        if(req.match(regex)){
+            resKey = key;            
+            break;
+        }
         
-//     }
-//     if(resKey){
-//         var s = 'นี้จ้า'+"\n";
-//         session.send(s+data[resKey];
-// //         setTimeout(function(){ session.send(s+data[resKey]) }, 500);
+    }
+    if(resKey){
+        var s = 'นี้จ้า'+"\n";
+        session.send(s+data[resKey]);
+//         setTimeout(function(){ session.send(s+data[resKey]) }, 500);
         
         
-//     } else {
+    } else {
         
-//         var res = 'สวัสดีจ้าา เราคือบอท KunSri'+'\n';
-//         question.forEach(function(questions,index){
-//             res += "\n"+questions;
+        var res = 'สวัสดีจ้าา เราคือบอท KunSri'+'\n';
+        question.forEach(function(questions,index){
+            res += "\n"+questions;
             
-//         });
-// //         setTimeout(function(){ session.send(res) }, 500);
-//         session.send(res);
-//     }           
+        });
+//         setTimeout(function(){ session.send(res) }, 500);
+        session.send(res);
+    }           
            
 });
 
