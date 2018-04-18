@@ -64,7 +64,7 @@ bot.dialog('/', function (session) {
         session.send(s);
 //         session.send(s+btn);
 //         session.sendTyping(s+btn);
-        session.sendTyping(s);
+//         session.sendTyping(s);
         
 //     } else if(resKey1){
 //         var text;
