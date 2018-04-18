@@ -24,10 +24,11 @@ var msg = server.post('api/messages', connector.listen());
 
 bot.dialog('/', function (session) {
     
-    var firebase    = require('firebase');
+    var firebase    = require('firebase-admin');
+    var serviceAccount = require('path/to/ksbot-test-dec.json');
     firebase.initializeApp({
         databaseURL: 'https://ksbot-test.firebaseio.com/',
-        serviceAccount: 'path/to/ksbot-test-dec.json', //this is file that I downloaded from Firebase Console
+        credential: admin.credential.cert(serviceAccount)
     });
 
     var ref = firebase.database().ref();
