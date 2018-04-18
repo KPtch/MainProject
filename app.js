@@ -5,15 +5,16 @@ var question    = require('./question.json');
 
 //-------------------------------
 
-    var config = {
-      apiKey: "AIzaSyBCXvufpin_C3BrQCio1ZT7MihqnZuciN0",
-      authDomain: "ksbot-test.firebaseapp.com",
-      databaseURL: "https://ksbot-test.firebaseio.com",
-      projectId: "ksbot-test",
-      storageBucket: "ksbot-test.appspot.com",
-      messagingSenderId: "371500888649"
-    };
-    firebase.initializeApp(config);
+var firebase = require("firebase");
+// Set the configuration for your app
+var firebaseConfig = {
+  apiKey: "AIzaSyBCXvufpin_C3BrQCio1ZT7MihqnZuciN0",  // Firebase Console > Project > Settings > Web API Key
+  authDomain: "https://ksbot-test.firebaseapp.com",
+  databaseURL: "https://https://ksbot-test.firebaseio.com",	// This chatbot only utilizes Firebase RTDB
+  storageBucket: "https://ksbot-test.appspot.com"
+};
+firebase.initializeApp(firebaseConfig);
+var database = firebase.database();
 
 //------------------------
 var server = restify.createServer();
