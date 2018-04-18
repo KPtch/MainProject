@@ -21,30 +21,30 @@ var msg = server.post('api/messages', connector.listen());
 
 var firebase    = require('firebase');
 
-function firebase(){
+// function firebase1(){
     
-    var app = firebase.initializeApp({
-        serviceAccount: './ksbot-test-dec.json',
-        databaseURL: 'https://ksbot-test.firebaseio.com/'
-    });
-    var ref = firebase.database().ref();
-    var data;
-    ref.on("value", function (snapshot) {
-        data  = snapshot.val();
-    });
-    return data;
-}
+//     var app = firebase.initializeApp({
+//         serviceAccount: './ksbot-test-dec.json',
+//         databaseURL: 'https://ksbot-test.firebaseio.com/'
+//     });
+//     var ref = firebase.database().ref();
+//     var data;
+//     ref.on("value", function (snapshot) {
+//         data  = snapshot.val();
+//     });
+//     return data;
+// }
 
 
 bot.dialog('/', function (session) {
     
     
-    var data = firebase();
-    var ans='';
-    for(var i=0; i<data.length; i++){
-        res += "\n"+data[i].key+"\n"+data[i].link+"\n"+data[i].comment;
-    }
-    session.send(ans);
+//     var data = firebase1();
+//     var ans='';
+//     for(var i=0; i<data.length; i++){
+//         res += "\n"+data[i].key+"\n"+data[i].link+"\n"+data[i].comment;
+//     }
+//     session.send(ans);
     session.send("-------------------------------------------------");
     session.send("hello");
     var req = session.message.text;
