@@ -48,17 +48,18 @@ bot.dialog('/', function (session) {
     databaseURL: 'https://ksbot-test.firebaseio.com/'
   });
 
-  // var data_firebase;
-  // var db = admin.database();
-  // var ref = db.ref();
+  var data_firebase;
+  var db = admin.database();
+  var ref = db.ref();
 
-  // ref.on("value", function(snapshot) {
-  //   data_firebase = snapshot.val();
-  // }, function (errorObject) {
-  //   console.log("The read failed: " + errorObject.code);
-  // });  
+  ref.on("value", function(snapshot) {
+    data_firebase = snapshot.val();
+    session.send(data_firebase[0].key);
+      
+  }, function (errorObject) {
+    session.send("The read failed: " + errorObject.code);
+  });  
       session.send("hello");
-  //     session.send(data_firebase[0].key);
     var req = session.message.text;
     var resKey = null;
     var keys = Object.keys(data);
