@@ -2,7 +2,7 @@ var restify     = require('restify');
 var builder     = require('botbuilder');
 var data        = require('./respond.json');
 var question    = require('./question.json');
-var firebase    = require('firebase');
+
 
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function(){
