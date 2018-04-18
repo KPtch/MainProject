@@ -1,26 +1,9 @@
-var restify = require('restify');
-var builder = require('botbuilder');
-var data = require('./respond.json');
-var question = require('./question.json');
+var restify     = require('restify');
+var builder     = require('botbuilder');
+var data        = require('./respond.json');
+var question    = require('./question.json');
+var firebase    = require('firebase');
 
-// ----------- fire base ---------------
-
-// var firebase = require('firebase');
-// firebase.initializeApp({
-//     databaseURL: 'https://ksbot-test.firebaseio.com/',
-//     serviceAccount: 'ksbot-test-dec.json', //this is file that I downloaded from Firebase Console
-// });
-
-// var ref = firebase.database().ref();
-
-// ref.on("value", function (snapshot) {
-//     data  = snapshot.val();
-//     console.log(data);
-// });
-//*****
-
-
-// ----------------------------------
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function(){
     console.log('%s listening to %s', server.name, server.url);
@@ -60,19 +43,20 @@ bot.dialog('/', function (session) {
 //     session.send("The read failed: " + errorObject.code);
 //   });  
     //******
-    var firebase = require('firebase');
-firebase.initializeApp({
-    databaseURL: 'https://ksbot-test.firebaseio.com/',
-    serviceAccount: 'ksbot-test-dec.json', //this is file that I downloaded from Firebase Console
-});
+    
+    firebase.initializeApp({
+        databaseURL: 'https://ksbot-test.firebaseio.com/',
+        serviceAccount: 'ksbot-test-dec.json', //this is file that I downloaded from Firebase Console
+    });
 
-var ref = firebase.database().ref();
+    var ref = firebase.database().ref("ksbot-test");
 
-ref.on("value", function (snapshot) {
-    data  = snapshot.val();
-    session.send(data);
-});
-      session.send("hello");
+    ref.on("value", function (snapshot) {
+        data  = snapshot.val();
+        session.send(data);
+    });
+    
+    session.send("hello");
     var req = session.message.text;
     var resKey = null;
     var keys = Object.keys(data);
