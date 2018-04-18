@@ -20,12 +20,13 @@ var bot = new builder.UniversalBot(connector);
 var msg = server.post('api/messages', connector.listen());
 
 var firebase    = require('firebase');
-firebase.initializeApp({
-    serviceAccount: './ksbot-test-dec.json',
-    databaseURL: 'https://ksbot-test.firebaseio.com/'
-});
+
 function firebase(){
     
+    var app = firebase.initializeApp({
+        serviceAccount: './ksbot-test-dec.json',
+        databaseURL: 'https://ksbot-test.firebaseio.com/'
+    });
     var ref = firebase.database().ref();
     var data;
     ref.on("value", function (snapshot) {
