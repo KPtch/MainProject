@@ -41,24 +41,37 @@ var msg = server.post('api/messages', connector.listen());
 
 bot.dialog('/', function (session) {
     
-  var admin = require('firebase-admin');
-  var serviceAccount = require('path/to/ksbot-test-dec.json');
-  admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    databaseURL: 'https://ksbot-test.firebaseio.com/'
-  });
+//   var admin = require('firebase-admin');
+//   var serviceAccount = require('path/to/ksbot-test-dec.json');
+//   admin.initializeApp({
+//     credential: admin.credential.cert(serviceAccount),
+//     databaseURL: 'https://ksbot-test.firebaseio.com/'
+//   });
 
-  var data_firebase;
-  var db = admin.database();
-  var ref = db.ref();
+//   var data_firebase;
+//   var db = admin.database();
+//   var ref = db.ref();
 
-  ref.on("value", function(snapshot) {
-    data_firebase = snapshot.val();
-    session.send(data_firebase[0].key);
+//   ref.on("value", function(snapshot) {
+//     data_firebase = snapshot.val();
+//     session.send(data_firebase[0].key);
       
-  }, function (errorObject) {
-    session.send("The read failed: " + errorObject.code);
-  });  
+//   }, function (errorObject) {
+//     session.send("The read failed: " + errorObject.code);
+//   });  
+    //******
+    var firebase = require('firebase');
+firebase.initializeApp({
+    databaseURL: 'https://ksbot-test.firebaseio.com/',
+    serviceAccount: 'ksbot-test-dec.json', //this is file that I downloaded from Firebase Console
+});
+
+var ref = firebase.database().ref();
+
+ref.on("value", function (snapshot) {
+    data  = snapshot.val();
+    session.send(data);
+});
       session.send("hello");
     var req = session.message.text;
     var resKey = null;
