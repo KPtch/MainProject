@@ -22,7 +22,7 @@ var msg = server.post('api/messages', connector.listen());
 
 
 //-------------------------------------
-var firebase = require('firebase');
+var firebase = require('firebase-functions');
 firebase.initializeApp({
     databaseURL: 'https://ksbot-test.firebaseio.com/',
     serviceAccount: 'ksbot-test-dec.json', //this is file that I downloaded from Firebase Console
