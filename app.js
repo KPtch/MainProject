@@ -37,7 +37,8 @@ bot.dialog('/', function (session) {
     }
     if(resKey){
         var s = 'นี้จ้า'+"\n";
-        session.send(s+data[resKey]);
+        setTimeout(function(){ session.send(s+data[resKey]) }, 500);
+        
         
     } else {
         
@@ -46,7 +47,7 @@ bot.dialog('/', function (session) {
             res += "\n"+questions;
             
         });
-        session.send(res);
+        setTimeout(function(){ session.send(res) }, 500);
     }           
            
 });
