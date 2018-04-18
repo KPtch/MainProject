@@ -25,10 +25,10 @@ bot.dialog('/', function (session) {
     
     
     
-    firebase.initializeApp({
-        serviceAccount: "./ksbot-test-dec.json",
-        databaseURL: "https://ksbot-test.firebaseio.com/" 
-    });
+//     firebase.initializeApp({
+//         serviceAccount: "./ksbot-test-dec.json",
+//         databaseURL: "https://ksbot-test.firebaseio.com/" 
+//     });
 
 //     var ref = firebase.database().ref();
 //     var data;
