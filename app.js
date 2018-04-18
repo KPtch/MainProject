@@ -26,12 +26,12 @@ firebase.initializeApp({
     databaseURL: "https://ksbot-test.firebaseio.com/" 
 });
 
-var ref = firebase.database().ref();
+
 
 bot.dialog('/', function (session) {
     
     
-    
+    var ref = firebase.database().ref();
     var data;
     ref.on("value", function (snapshot) {
         data  = snapshot.val();
