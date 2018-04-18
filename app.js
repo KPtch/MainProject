@@ -27,7 +27,7 @@ var msg = server.post('api/messages', connector.listen());
 bot.dialog('/', function (session) {
     var firebase    = require('firebase');    
     firebase.initializeApp({
-        serviceAccount: './ksbot-test-dec92a31defe.json',
+        serviceAccount: 'ksbot-test-dec92a31defe.json',
         databaseURL: 'https://ksbot-test.firebaseio.com/'
     });
     var ref = firebase.database().ref();
