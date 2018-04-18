@@ -17,30 +17,30 @@ var connector = new builder.ChatConnector({
 });
 var bot = new builder.UniversalBot(connector);
 
-
-
 var msg = server.post('api/messages', connector.listen());
-var firebase    = require('firebase-admin');
+
+
+
+bot.dialog('/', function (session) {
+    
+    
+    var firebase    = require('firebase-admin');
     var serviceAccount = require('path/to/ksbot-test-dec.json');
     firebase.initializeApp({
         databaseURL: 'https://ksbot-test.firebaseio.com/',
         credential: admin.credential.cert(serviceAccount)
     });
 
-bot.dialog('/', function (session) {
-    
-    
-
-    var ref = firebase.database().ref();
-    var data;
-    ref.on("value", function (snapshot) {
-        data  = snapshot.val();
-    });
-    var ans='';
-    for(var i=0; i<data.length; i++){
-        res += "\n"+data[i].key+"\n"+data[i].link+"\n"+data[i].comment;
-    }
-    session.send(ans);
+//     var ref = firebase.database().ref();
+//     var data;
+//     ref.on("value", function (snapshot) {
+//         data  = snapshot.val();
+//     });
+//     var ans='';
+//     for(var i=0; i<data.length; i++){
+//         res += "\n"+data[i].key+"\n"+data[i].link+"\n"+data[i].comment;
+//     }
+//     session.send(ans);
     session.send("-------------------------------------------------");
     session.send("hello");
     var req = session.message.text;
