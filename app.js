@@ -3,6 +3,22 @@ var builder = require('botbuilder');
 var data = require('./respond.json');
 var question = require('./question.json');
 
+// ----------- fire base ---------------
+
+var firebase = require('firebase');
+firebase.initializeApp({
+    databaseURL: 'https://ksbot-test.firebaseio.com/',
+    serviceAccount: 'ksbot-test-dec.json', //this is file that I downloaded from Firebase Console
+});
+var data_firebase;
+var ref = firebase.database().ref();
+
+ref.on("value", function (snapshot) {
+    data_firebase  = snapshot.val();
+    
+});
+
+// ----------------------------------
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function(){
     console.log('%s listening to %s', server.name, server.url);
@@ -23,7 +39,8 @@ var msg = server.post('api/messages', connector.listen());
 
 bot.dialog('/', function (session) {
 
-
+    session.send("hello");
+    session.send(data_firebase);
     var req = session.message.text;
     var resKey = null;
     var keys = Object.keys(data);
@@ -36,6 +53,7 @@ bot.dialog('/', function (session) {
         }
         
     }
+    
     if(resKey){
         var s = 'นี้จ้า'+"\n";
         session.send(s+data[resKey]);
@@ -54,30 +72,3 @@ bot.dialog('/', function (session) {
     }           
            
 });
-
-//-------------------------------------------------
-// test code
-// var restify = require('restify');
-// var builder = require('botbuilder');
-
-
-// var server = restify.createServer();
-// server.listen(process.env.port || process.env.PORT || 3978, function(){
-//     console.log('%s listening to %s', server.name, server.url);
-// });
-
-// // Setup Bot
-// var connector = new builder.ChatConnector({
-//     appId: process.env.MICROSOFT_APP_ID,
-//     appPassword: process.env.MICROSOFT_APP_PASSWORD
-// });
-// var bot = new builder.UniversalBot(connector);
-
-
-
-
-// server.post('api/messages', connector.listen());
-
-// bot.dialog('/', function (session) {
-//     session.send("Hello");
-// });
