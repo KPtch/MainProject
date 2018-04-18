@@ -40,7 +40,7 @@ var msg = server.post('api/messages', connector.listen());
 bot.dialog('/', function (session) {
 
     session.send("hello");
-    session.send(data_firebase);
+//     session.send(data_firebase);
     var req = session.message.text;
     var resKey = null;
     var keys = Object.keys(data);
