@@ -25,7 +25,7 @@ bot.dialog('/', function (session) {
     
     
     var firebase    = require('firebase-admin');
-    var serviceAccount = require('path/to/ksbot-test-dec.json');
+    var serviceAccount = require('ksbot-test-dec.json');
     firebase.initializeApp({
         databaseURL: 'https://ksbot-test.firebaseio.com/',
         credential: admin.credential.cert(serviceAccount)
