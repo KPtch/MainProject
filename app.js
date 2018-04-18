@@ -5,13 +5,13 @@ var question = require('./question.json');
 
 // ----------- fire base ---------------
 
-var firebase = require('firebase');
-firebase.initializeApp({
-    databaseURL: 'https://ksbot-test.firebaseio.com/',
-    serviceAccount: 'ksbot-test-dec.json', //this is file that I downloaded from Firebase Console
-});
-var data_firebase;
-var ref = firebase.database().ref();
+// var firebase = require('firebase');
+// firebase.initializeApp({
+//     databaseURL: 'https://ksbot-test.firebaseio.com/',
+//     serviceAccount: 'ksbot-test-dec.json', //this is file that I downloaded from Firebase Console
+// });
+// var data_firebase;
+// var ref = firebase.database().ref();
 
 // ----------------------------------
 var server = restify.createServer();
@@ -33,10 +33,10 @@ var msg = server.post('api/messages', connector.listen());
 
 
 bot.dialog('/', function (session) {
-    ref.on("value", function (snapshot) {
-        data_firebase  = snapshot.val();
+//     ref.on("value", function (snapshot) {
+//         data_firebase  = snapshot.val();
 
-    });
+//     });
     session.send("hello");
     session.send(data_firebase);
     var req = session.message.text;
