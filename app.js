@@ -22,7 +22,7 @@ var msg = server.post('api/messages', connector.listen());
 
 
 bot.dialog('/', function (session) {
-    
+    setTimeout(function(){ session.send("Hellooo") }, 500);
     session.send("Hello");
 //     var req = session.message.text;
 //     var resKey = null;
