@@ -50,7 +50,7 @@ bot.dialog('/', function (session) {
     });
 
     var ref = firebase.database().ref().child('0');
-
+    var data;
     ref.on("value", function (snapshot) {
         data  = snapshot.val();
         session.send(data);
