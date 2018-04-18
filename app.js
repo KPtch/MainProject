@@ -49,7 +49,7 @@ bot.dialog('/', function (session) {
         serviceAccount: 'ksbot-test-dec.json', //this is file that I downloaded from Firebase Console
     });
 
-    var ref = firebase.database().ref("ksbot-test");
+    var ref = firebase.database().ref().child('0');
 
     ref.on("value", function (snapshot) {
         data  = snapshot.val();
