@@ -24,7 +24,7 @@ var msg = server.post('api/messages', connector.listen());
 
 bot.dialog('/', function (session) {
     
-    var firebase    = require('firebase');
+//     var firebase    = require('firebase');
     
     
     
