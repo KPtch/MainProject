@@ -3,20 +3,6 @@ var builder     = require('botbuilder');
 var data        = require('./respond.json');
 var question    = require('./question.json');
 
-//-------------------------------
-
-// var firebase = require("firebase");
-// // Set the configuration for your app
-// var firebaseConfig = {
-//   apiKey: "AIzaSyBCXvufpin_C3BrQCio1ZT7MihqnZuciN0",  // Firebase Console > Project > Settings > Web API Key
-//   authDomain: "https://ksbot-test.firebaseapp.com",
-//   databaseURL: "https://https://ksbot-test.firebaseio.com",	// This chatbot only utilizes Firebase RTDB
-//   storageBucket: "https://ksbot-test.appspot.com"
-// };
-// firebase.initializeApp(firebaseConfig);
-// var database = firebase.database();
-
-//------------------------
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function(){
     console.log('%s listening to %s', server.name, server.url);
@@ -35,8 +21,29 @@ var timeout = undefined;
 var msg = server.post('api/messages', connector.listen());
 
 
+//-------------------------------------
+var firebase = require('firebase');
+firebase.initializeApp({
+    databaseURL: 'https://ksbot-test.firebaseio.com/',
+    serviceAccount: 'ksbot-test-dec.json', //this is file that I downloaded from Firebase Console
+});
+
+var ref = firebase.database().ref();
+
+
+//-----------------
+
 bot.dialog('/', function (session) {
     
+    //-------------------
+    
+    var database = firebase.database();
+
+        ref.on("value", function (snapshot) {
+        data  = snapshot.val();
+        session.send(data[0].key);
+    });
+    //-------------------
     session.send("hello");
     var req = session.message.text;
     var resKey = null;
@@ -69,3 +76,5 @@ bot.dialog('/', function (session) {
     }           
            
 });
+
+
