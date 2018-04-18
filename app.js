@@ -54,17 +54,17 @@ bot.dialog('/', function (session) {
     
     if(resKey){
         var s = 'นี้จ้า'+"\n";
-        var btn = new builder.HeroCard(session)
-                    .title('เอกสาร')
-                    .buttons([
-                        builder.CardAction.openUrl(session, 'https://www.facebook.com/gl0vep', 'เอกสาร'),
-                        builder.CardAction.openUrl(session, 'https://www.facebook.com/gl0vep', 'คำแนะนำ')
-                    ]);
+//         var btn = new builder.HeroCard(session)
+//                     .title('เอกสาร')
+//                     .buttons([
+//                         builder.CardAction.openUrl(session, 'https://www.facebook.com/gl0vep', 'เอกสาร'),
+//                         builder.CardAction.openUrl(session, 'https://www.facebook.com/gl0vep', 'คำแนะนำ')
+//                     ]);
         
-        session.send(s);
+//         session.send(s);
 //         session.send(s+btn);
 //         session.sendTyping(s+btn);
-//         session.sendTyping(s);
+        session.sendTyping(s);
         
 //     } else if(resKey1){
 //         var text;
