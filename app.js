@@ -2,8 +2,20 @@ var restify     = require('restify');
 var builder     = require('botbuilder');
 var data        = require('./respond.json');
 var question    = require('./question.json');
-var firebase    = require('firebase');
 
+//-------------------------------
+
+    var config = {
+      apiKey: "AIzaSyBCXvufpin_C3BrQCio1ZT7MihqnZuciN0",
+      authDomain: "ksbot-test.firebaseapp.com",
+      databaseURL: "https://ksbot-test.firebaseio.com",
+      projectId: "ksbot-test",
+      storageBucket: "ksbot-test.appspot.com",
+      messagingSenderId: "371500888649"
+    };
+    firebase.initializeApp(config);
+
+//------------------------
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function(){
     console.log('%s listening to %s', server.name, server.url);
@@ -23,38 +35,6 @@ var msg = server.post('api/messages', connector.listen());
 
 
 bot.dialog('/', function (session) {
-    
-//   var admin = require('firebase-admin');
-//   var serviceAccount = require('path/to/ksbot-test-dec.json');
-//   admin.initializeApp({
-//     credential: admin.credential.cert(serviceAccount),
-//     databaseURL: 'https://ksbot-test.firebaseio.com/'
-//   });
-
-//   var data_firebase;
-//   var db = admin.database();
-//   var ref = db.ref();
-
-//   ref.on("value", function(snapshot) {
-//     data_firebase = snapshot.val();
-//     session.send(data_firebase[0].key);
-      
-//   }, function (errorObject) {
-//     session.send("The read failed: " + errorObject.code);
-//   });  
-    //******
-    
-//     firebase.initializeApp({
-//         databaseURL: 'https://ksbot-test.firebaseio.com/',
-//         serviceAccount: 'ksbot-test-dec.json', //this is file that I downloaded from Firebase Console
-//     });
-
-//     var ref = firebase.database().ref();
-//     var data;
-//     ref.on("value", function (snapshot) {
-//         data  = snapshot.val();
-//         session.send(data);
-//     });
     
     session.send("hello");
     var req = session.message.text;
