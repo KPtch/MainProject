@@ -2,7 +2,7 @@ var restify     = require('restify');
 var builder     = require('botbuilder');
 var data        = require('./respond.json');
 var question    = require('./question.json');
-var config_firebase    = require('./config_firebase');
+var firebase    = require('firebase');
 
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function(){
@@ -17,7 +17,6 @@ var connector = new builder.ChatConnector({
 var bot = new builder.UniversalBot(connector);
 
 
-var timeout = undefined;
 
 var msg = server.post('api/messages', connector.listen());
 
@@ -42,7 +41,6 @@ bot.dialog('/', function (session) {
     if(resKey){
         var s = 'นี้จ้า'+"\n";
         session.send(s+data[resKey]);
-//         setTimeout(function(){ session.send(s+data[resKey]) }, 500);
         
         
     } else {
@@ -52,7 +50,6 @@ bot.dialog('/', function (session) {
             res += "\n"+questions;
             
         });
-//         setTimeout(function(){ session.send(res) }, 500);
         session.send(res);
     }           
            
