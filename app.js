@@ -24,11 +24,10 @@ var msg = server.post('api/messages', connector.listen());
 bot.dialog('/', function (session) {
     
     
-    var firebase    = require('firebase-admin');
-    var serviceAccount = require('ksbot-test-dec.json');
+    var firebase    = require('firebase');
     firebase.initializeApp({
-        databaseURL: 'https://ksbot-test.firebaseio.com/',
-        credential: admin.credential.cert(serviceAccount)
+        serviceAccount: "./ksbot-test-dec.json",
+        databaseURL: "https://ksbot-test.firebaseio.com/" 
     });
 
 //     var ref = firebase.database().ref();
