@@ -21,21 +21,23 @@ var msg = server.post('api/messages', connector.listen());
 
 var firebase    = require('firebase');
 
-firebase.initializeApp({
-    serviceAccount: "ksbot-test-dec.json",
-    databaseURL: "https://ksbot-test.firebaseio.com/" 
-});
-
+function firebase(){
+    firebase.initializeApp({
+        serviceAccount: "ksbot-test-dec.json",
+        databaseURL: "https://ksbot-test.firebaseio.com/" 
+    });
+    var ref = firebase.database().ref();
+    var data;
+    ref.on("value", function (snapshot) {
+        data  = snapshot.val();
+    });
+}
 
 
 bot.dialog('/', function (session) {
     
     
-//     var ref = firebase.database().ref();
-//     var data;
-//     ref.on("value", function (snapshot) {
-//         data  = snapshot.val();
-//     });
+    
 //     var ans='';
 //     for(var i=0; i<data.length; i++){
 //         res += "\n"+data[i].key+"\n"+data[i].link+"\n"+data[i].comment;
