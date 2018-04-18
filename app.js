@@ -22,7 +22,7 @@ var msg = server.post('api/messages', connector.listen());
 var firebase    = require('firebase');
 
 firebase.initializeApp({
-    serviceAccount: "./ksbot-test-dec.json",
+    serviceAccount: "ksbot-test-dec.json",
     databaseURL: "https://ksbot-test.firebaseio.com/" 
 });
 
