@@ -13,11 +13,6 @@ firebase.initializeApp({
 var data_firebase;
 var ref = firebase.database().ref();
 
-ref.on("value", function (snapshot) {
-    data_firebase  = snapshot.val();
-    
-});
-
 // ----------------------------------
 var server = restify.createServer();
 server.listen(process.env.port || process.env.PORT || 3978, function(){
@@ -38,9 +33,12 @@ var msg = server.post('api/messages', connector.listen());
 
 
 bot.dialog('/', function (session) {
+    ref.on("value", function (snapshot) {
+        data_firebase  = snapshot.val();
 
+    });
     session.send("hello");
-//     session.send(data_firebase);
+    session.send(data_firebase);
     var req = session.message.text;
     var resKey = null;
     var keys = Object.keys(data);
