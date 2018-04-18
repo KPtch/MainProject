@@ -22,28 +22,21 @@ var msg = server.post('api/messages', connector.listen());
 
 
 //-------------------------------------
-var firebase = require('firebase-functions');
-firebase.initializeApp({
-    databaseURL: 'https://ksbot-test.firebaseio.com/',
-    serviceAccount: 'ksbot-test-dec.json', //this is file that I downloaded from Firebase Console
-});
+var admin = require("firebase-admin");
 
-var ref = firebase.database().ref();
+var serviceAccount = require("ksbot-test-dec.json.json");
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: "https://ksbot-test.firebaseio.com"
+});
 
 
 //-----------------
 
 bot.dialog('/', function (session) {
     
-    //-------------------
-    
-    var database = firebase.database();
-
-        ref.on("value", function (snapshot) {
-        data  = snapshot.val();
-        session.send(data[0].key);
-    });
-    //-------------------
+   
     session.send("hello");
     var req = session.message.text;
     var resKey = null;
