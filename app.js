@@ -50,19 +50,20 @@ bot.dialog('/', function (session) {
 //             break;
 //         }
         
-//     }
+//     } session.sendTyping()
     
     if(resKey){
         var s = 'นี้จ้า'+"\n";
-        const btn = new builder.HeroCard(session)
-                    .text('เอกสารนี้ใช่ไหม')
+        var btn = new builder.HeroCard(session)
+                    .title('เอกสาร')
                     .buttons([
-                        builder.CardAction.openUrl(session, "https://www.facebook.com", "ใบคำร้อง"),
-                        builder.CardAction.openUrl(session, "https://www.facebook.com", "คำแนะนำ"),
+                        builder.CardAction.openUrl(session, 'https://www.facebook.com/gl0vep', 'เอกสาร'),
+                        builder.CardAction.openUrl(session, 'https://www.facebook.com/gl0vep', 'คำแนะนำ')
                     ]);
         
-        session.send(btn);
-        session.send("\n"+data[resKey]);
+        session.send(s+btn);
+//         session.sendTyping(s+btn);
+//         session.sendTyping(s);
         
 //     } else if(resKey1){
 //         var text;
