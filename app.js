@@ -26,7 +26,7 @@ firebase.initializeApp({
     credential: firebase.credential.cert(serviceAccount)
 });
 
-var ref = firebase.database().ref();
+//var ref = firebase.database().ref();
 
 // ref.on("value", function (snapshot) {
 //     data  = snapshot.val();
