@@ -19,28 +19,39 @@ var bot = new builder.UniversalBot(connector);
 
 var msg = server.post('api/messages', connector.listen());
 
+var firebase = require('firebase');
+firebase.initializeApp({
+    databaseURL: 'https://ksbot-test.firebaseio.com/',
+    serviceAccount: 'ksbot-test-dec92a31defe.json', //this is file that I downloaded from Firebase Console
+});
 
+var ref = firebase.database().ref();
+
+// ref.on("value", function (snapshot) {
+//     data  = snapshot.val();
+//     console.log(data[0].key);
+// });
 
 
 
 
 bot.dialog('/', function (session) {
-    var firebase    = require('firebase');    
-    firebase.initializeApp({
-        serviceAccount: 'ksbot-test-dec92a31defe.json',
-        databaseURL: 'https://ksbot-test.firebaseio.com/'
-    });
-    var ref = firebase.database().ref();
-    var ez;
-    ref.on("value", function (snapshot) {
-        ez  = snapshot.val();
-    });
+//     var firebase    = require('firebase');    
+//     firebase.initializeApp({
+//         serviceAccount: 'ksbot-test-dec92a31defe.json',
+//         databaseURL: 'https://ksbot-test.firebaseio.com/'
+//     });
+//     var ref = firebase.database().ref();
+//     var ez;
+//     ref.on("value", function (snapshot) {
+//         ez  = snapshot.val();
+//     });
     
-    var ans='';
-    for(var i=0; i<ez.length; i++){
-        ans += "\n"+ez[i].key+"\n"+ez[i].link+"\n"+ez[i].comment;
-    }
-    session.send(ans);
+//     var ans='';
+//     for(var i=0; i<ez.length; i++){
+//         ans += "\n"+ez[i].key+"\n"+ez[i].link+"\n"+ez[i].comment;
+//     }
+//     session.send(ans);
     session.send("-------------------------------------------------");
     session.send("hello");
     var req = session.message.text;
