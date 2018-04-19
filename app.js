@@ -19,12 +19,7 @@ var bot = new builder.UniversalBot(connector);
 
 var msg = server.post('api/messages', connector.listen());
 
-var firebase = require('firebase-admin');
-var serviceAccount = require('path/to/ksbot-test-dec92a31defe.json');
-firebase.initializeApp({
-    databaseURL: 'https://ksbot-test.firebaseio.com',
-    credential: firebase.credential.cert(serviceAccount)
-});
+
 
 //var ref = firebase.database().ref();
 
@@ -37,6 +32,13 @@ firebase.initializeApp({
 
 
 bot.dialog('/', function (session) {
+    var firebase = require('firebase-admin');
+var serviceAccount = require('path/to/ksbot-test-dec92a31defe.json');
+firebase.initializeApp({
+    databaseURL: 'https://ksbot-test.firebaseio.com',
+    credential: firebase.credential.cert(serviceAccount)
+});
+    
 //     var firebase    = require('firebase');    
 //     firebase.initializeApp({
 //         serviceAccount: 'ksbot-test-dec92a31defe.json',
