@@ -173,20 +173,20 @@ bot.dialog('/',function (session) {
         
         
     }
-    else if(resKey1){
-        switch(data2[resKey1]) {
-            case "ใบลา":
-                session.beginDialog('SelectChoice');
-                break;
-            case "สอบ":
-                session.beginDialog('ChooseChoice');
-                break;
-            case "เทียบ":
-                session.beginDialog('PickChoice');
-                break;
-            default:
-                break;
-        }
+//     else if(resKey1){
+//         switch(data2[resKey1]) {
+//             case "ใบลา":
+//                 session.beginDialog('SelectChoice');
+//                 break;
+//             case "สอบ":
+//                 session.beginDialog('ChooseChoice');
+//                 break;
+//             case "เทียบ":
+//                 session.beginDialog('PickChoice');
+//                 break;
+//             default:
+//                 break;
+//         }
         else {
         
         var res = 'สวัสดีจ้าา เราคือบอท KunSri'+'\n';
@@ -198,45 +198,45 @@ bot.dialog('/',function (session) {
     }           
            
 });
-bot.dialog('SelectChoice',[
-    function (session) {
-        builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบลาป่วย/กิจ|ใบขอลาออก|ใบขอลาพักการศึกษา", {
-            listStyle: builder.ListStyle.button
-        });
-    },
-    function (session, results) {
-        var rrr= resKeys(results.response.entity);
-        sendButton(session,data1[rrr]);
-        session.endDialog();
+// bot.dialog('SelectChoice',[
+//     function (session) {
+//         builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบลาป่วย/กิจ|ใบขอลาออก|ใบขอลาพักการศึกษา", {
+//             listStyle: builder.ListStyle.button
+//         });
+//     },
+//     function (session, results) {
+//         var rrr= resKeys(results.response.entity);
+//         sendButton(session,data1[rrr]);
+//         session.endDialog();
        
-    }
-]);
-bot.dialog('ChooseChoice',[
-    function (session) {
-        builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบขอสอบชดใช้|ใบขอสอบชดใช้กรณีป่วย", {
-            listStyle: builder.ListStyle.button
-        });
-    },
-    function (session, results) {
-        var rrrr= resKeys(results.response.entity);
-        sendButton(session,data1[rrrr]);
-        session.endDialog();
+//     }
+// ]);
+// bot.dialog('ChooseChoice',[
+//     function (session) {
+//         builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบขอสอบชดใช้|ใบขอสอบชดใช้กรณีป่วย", {
+//             listStyle: builder.ListStyle.button
+//         });
+//     },
+//     function (session, results) {
+//         var rrrr= resKeys(results.response.entity);
+//         sendButton(session,data1[rrrr]);
+//         session.endDialog();
         
-    }
-]);
-bot.dialog('PickChoice',[
-    function (session) {
-        builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบขอเทียบโอนรายวิชา|ใบขอเทียบรายวิชา", {
-            listStyle: builder.ListStyle.button
-        });
-    },
-    function (session, results) {
-        var rrrrr= resKeys(results.response.entity);
-        sendButton(session,data1[rrrrr]);
-        session.endDialog();
+//     }
+// ]);
+// bot.dialog('PickChoice',[
+//     function (session) {
+//         builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบขอเทียบโอนรายวิชา|ใบขอเทียบรายวิชา", {
+//             listStyle: builder.ListStyle.button
+//         });
+//     },
+//     function (session, results) {
+//         var rrrrr= resKeys(results.response.entity);
+//         sendButton(session,data1[rrrrr]);
+//         session.endDialog();
         
-    }
-]);
+//     }
+// ]);
 
 
 
