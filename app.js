@@ -167,7 +167,7 @@ bot.dialog('/',function (session) {
     var resKey = resKeys(req);
     var resKey1 = resKeys1(req);
     
-    session.send(resKey);
+//     session.send(resKey);
     if(resKey){
         sendButton(session,data1[resKey]);   
         
