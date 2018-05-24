@@ -77,6 +77,7 @@
 var restify     = require('restify');
 var builder     = require('botbuilder');
 var data1        = require('./respond.json');
+var data2        = require('./Case3.json');
 var question    = require('./question.json');
 var firebase    = require('firebase');
 const fbTemplate = require('fb-message-builder');
@@ -104,6 +105,52 @@ firebase.initializeApp({
 var ref = firebase.database().ref();
 
 
+
+function resKeys(req){
+    var resKey = null;
+    var keys = Object.keys(data1);
+    for(var i=0; i<keys.length; i++){
+        
+        var key = keys[i];
+        var regex = new RegExp(key);
+        if(req.match(regex)){
+            resKey = key;       
+            return resKey;
+        }
+        
+    }
+}
+function resKeys1(req){
+    var resKey1 = null;
+    var keys1 = Object.keys(data2);
+    for(var i=0; i<keys1.length; i++){
+        
+        var key = keys1[i];
+        var regex = new RegExp(key);
+        if(req.match(regex)){
+            resKey1 = key;       
+            return resKey1;
+        }
+        
+    }
+}
+function sendButton(session,req){
+    ref.on("value", function (snapshot) {
+            var dddd  = snapshot.val();
+            
+            for(var i=0;i<dddd.length; i++){
+                if(req===dddd[i].key){
+                    var hCard = 'ต้องการเอกสารนี้ใช่ไหม?'+'\n';
+                    var hh = "\n"+'ใบ'+dddd[i].key+'  :  [ '+dddd[i].link+' ]';
+                    var hhh = "\n"+'คำแนะนำ  :  [ '+dddd[i].comment+' ]';
+                    hCard += hh+hhh;
+
+                    session.send(hCard);
+                    
+                }                
+            }
+     });  
+}
 bot.dialog('/',function (session) {
     
     
@@ -111,40 +158,18 @@ bot.dialog('/',function (session) {
     
     
     
-    // session.send("-------------------------------------------------");
-    // session.send("hello");
+    
     
     
 
     var req = session.message.text;
     // session.send(req);
-    var resKey = null;
-    var keys = Object.keys(data1);
-    for(var i=0; i<keys.length; i++){
-        
-        var key = keys[i];
-        // session.send(key);
-        // session.send("-------------------------------------------------");
-        var regex = new RegExp(key);
-        if(req.match(regex)){
-            resKey = key;       
-            break;
-        }
-        
-    }
+    var resKey = resKeys(req);
+    var resKey1 = resKeys1(req);
+    
     session.send(resKey);
     if(resKey){
-        var s = 'นี้จ้า'+"\n";
-        ref.on("value", function (snapshot) {
-            var dddd  = snapshot.val();
-            
-            session.send(dddd[0].link);
-        
-            if(data1[resKey]==dddd[10].key){
-                session.send(s+dddd[10].link);
-            }
-        });
-        session.send(s+data1[resKey]);    
+        sendButton(session,data1[resKey]);   
         
         
     } else {
