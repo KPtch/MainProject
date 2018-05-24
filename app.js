@@ -198,45 +198,45 @@ bot.dialog('/',function (session) {
     }           
            
 });
-bot.dialog('SelectChoice',[
-    function (session) {
-        builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบลาป่วย/กิจ|ใบขอลาออก|ใบขอลาพักการศึกษา", {
-            builder.ListStyle.button
-        });
-    },
-    function (session, results) {
-        var rrr= resKeys(results.response.entity);
-        sendButton(session,data1[rrr]);
-        session.endDialog();
+// bot.dialog('SelectChoice',[
+//     function (session) {
+//         builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบลาป่วย/กิจ|ใบขอลาออก|ใบขอลาพักการศึกษา", {
+//             builder.ListStyle.button
+//         });
+//     },
+//     function (session, results) {
+//         var rrr= resKeys(results.response.entity);
+//         sendButton(session,data1[rrr]);
+//         session.endDialog();
        
-    }
-]);
-bot.dialog('ChooseChoice',[
-    function (session) {
-        builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบขอสอบชดใช้|ใบขอสอบชดใช้กรณีป่วย", {
-            builder.ListStyle.button
-        });
-    },
-    function (session, results) {
-        var rrrr= resKeys(results.response.entity);
-        sendButton(session,data1[rrrr]);
-        session.endDialog();
+//     }
+// ]);
+// bot.dialog('ChooseChoice',[
+//     function (session) {
+//         builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบขอสอบชดใช้|ใบขอสอบชดใช้กรณีป่วย", {
+//             builder.ListStyle.button
+//         });
+//     },
+//     function (session, results) {
+//         var rrrr= resKeys(results.response.entity);
+//         sendButton(session,data1[rrrr]);
+//         session.endDialog();
         
-    }
-]);
-bot.dialog('PickChoice',[
-    function (session) {
-        builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบขอเทียบโอนรายวิชา|ใบขอเทียบรายวิชา", {
-            builder.ListStyle.button
-        });
-    },
-    function (session, results) {
-        var rrrrr= resKeys(results.response.entity);
-        sendButton(session,data1[rrrrr]);
-        session.endDialog();
+//     }
+// ]);
+// bot.dialog('PickChoice',[
+//     function (session) {
+//         builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบขอเทียบโอนรายวิชา|ใบขอเทียบรายวิชา", {
+//             builder.ListStyle.button
+//         });
+//     },
+//     function (session, results) {
+//         var rrrrr= resKeys(results.response.entity);
+//         sendButton(session,data1[rrrrr]);
+//         session.endDialog();
         
-    }
-]);
+//     }
+// ]);
 
 
 
