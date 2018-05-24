@@ -172,20 +172,22 @@ bot.dialog('/',function (session) {
         sendButton(session,data1[resKey]);   
         
         
-    }else if(resKey1){
-        switch(data2[resKey1]) {
-            case "ใบลา":
-                session.beginDialog('SelectChoice');
-                break;
-            case "สอบ":
-                session.beginDialog('ChooseChoice');
-                break;
-            case "เทียบ":
-                session.beginDialog('PickChoice');
-                break;
-            default:
-                break;
-        }else {
+    }
+//     else if(resKey1){
+//         switch(data2[resKey1]) {
+//             case "ใบลา":
+//                 session.beginDialog('SelectChoice');
+//                 break;
+//             case "สอบ":
+//                 session.beginDialog('ChooseChoice');
+//                 break;
+//             case "เทียบ":
+//                 session.beginDialog('PickChoice');
+//                 break;
+//             default:
+//                 break;
+//         }
+        else {
         
         var res = 'สวัสดีจ้าา เราคือบอท KunSri'+'\n';
         question.forEach(function(questions,index){
