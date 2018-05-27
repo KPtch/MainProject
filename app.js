@@ -174,7 +174,7 @@ bot.dialog('/',function (session) {
         
     }
     else if(resKey1){
-        session.send("ขอละเอียดกว่านี้หน่อยน้า");
+//         session.send("ขอละเอียดกว่านี้หน่อยน้า");
         
         switch(data2[resKey1]) {
             case "ใบลา":
