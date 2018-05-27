@@ -206,20 +206,12 @@ bot.dialog('SelectChoice',[
     },
     function (session, results) {
         
-        if(results.response==="ใบลาป่วย/กิจ"){
-            var rrrrr= resKeys(results.response.entity);
-            sendButton(session,data1[rrrrr]);
-            session.endDialog();
-        }else if(results.response==="ใบขอลาออก"){
-            var rrrrr= resKeys(results.response.entity);
-            sendButton(session,data1[rrrrr]);
-            session.endDialog();
-        }else if(results.response==="ใบขอลาพักการศึกษา"){
-            var rrrrr= resKeys(results.response.entity);
-            sendButton(session,data1[rrrrr]);
+        if(results.response){
+            var rrrr= resKeys(results.response.entity);
+            sendButton(session,data1[rrrr]);
             session.endDialog();
         }else{
-            session.endDialog();
+            session.beginDialog('/');
         }
         
         
@@ -276,16 +268,12 @@ bot.dialog('ChooseChoice',[
         });
     },
     function (session, results) {
-        if(results.response==="ใบขอสอบชดใช้"){
-            var rrrrr= resKeys(results.response.entity);
-            sendButton(session,data1[rrrrr]);
-            session.endDialog();
-        }else if(results.response==="ใบขอสอบชดใช้กรณีป่วย"){
-            var rrrrr= resKeys(results.response.entity);
-            sendButton(session,data1[rrrrr]);
+        if(results.response){
+            var rrrr= resKeys(results.response.entity);
+            sendButton(session,data1[rrrr]);
             session.endDialog();
         }else{
-            session.endDialog();
+            session.beginDialog('/');
         }
         
     }
@@ -298,16 +286,12 @@ bot.dialog('PickChoice',[
     },
     function (session, results) {
         
-        if(results.response==="ใบขอเทียบโอนรายวิชา"){
-            var rrrrr= resKeys(results.response.entity);
-            sendButton(session,data1[rrrrr]);
-            session.endDialog();
-        }else if(results.response==="ใบขอเทียบรายวิชา"){
-            var rrrrr= resKeys(results.response.entity);
-            sendButton(session,data1[rrrrr]);
+        if(results.response){
+            var rrrr= resKeys(results.response.entity);
+            sendButton(session,data1[rrrr]);
             session.endDialog();
         }else{
-            session.endDialog();
+            session.beginDialog('/');
         }
     }
 ]);
@@ -319,16 +303,12 @@ bot.dialog('PickChoice1',[
     },
     function (session, results) {
         
-        if(results.response==="ใบลงทะเบียนเรียนล่าช้า"){
-            var rrrrr= resKeys(results.response.entity);
-            sendButton(session,data1[rrrrr]);
-            session.endDialog();
-        }else if(results.response==="ใบขอลงทะเบียนเรียน-ปรับปรุง(แอดมือ)"){
-            var rrrrr= resKeys(results.response.entity);
-            sendButton(session,data1[rrrrr]);
+        if(results.response){
+            var rrrr= resKeys(results.response.entity);
+            sendButton(session,data1[rrrr]);
             session.endDialog();
         }else{
-            session.endDialog();
+            session.beginDialog('/');
         }
     }
 ]);
