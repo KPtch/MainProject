@@ -176,18 +176,21 @@ bot.dialog('/',function (session) {
     else if(resKey1){
         session.send("ขอละเอียดกว่านี้หน่อยน้า");
         
-//         switch(data2[resKey1]) {
-//             case "ใบลา":
+        switch(data2[resKey1]) {
+            case "ใบลา":
 //                 session.beginDialog('SelectChoice');
-//                 break;
-//             case "สอบ":
+                session.send("ขอละเอียดกว่านี้หน่อยน้า");
+                break;
+            case "สอบ":
 //                 session.beginDialog('ChooseChoice');
-//                 break;
-//             case "เทียบ":
+                session.send("ขอละเอียดกว่านี้หน่อยน้า");
+                break;
+            case "เทียบ":
 //                 session.beginDialog('PickChoice');
-//                 break;
-//             default:
-//                 break;
+                session.send("ขอละเอียดกว่านี้หน่อยน้า");
+                break;
+            default:
+                break;
         }
         else {
         
