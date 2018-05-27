@@ -213,9 +213,6 @@ bot.dialog('SelectChoice',[
                 sendButton(session,data1[rrrr]);
                 session.endDialog();
             }else if(rrrr1){
-                session.beginDialog('SelectChoice');
-                session.endDialog();
-            }else{
                 session.beginDialog('/');
                 session.endDialog();
             }
@@ -286,9 +283,6 @@ bot.dialog('ChooseChoice',[
                 sendButton(session,data1[rrrr]);
                 session.endDialog();
             }else if(rrrr1){
-                session.beginDialog('ChooseChoice');
-                session.endDialog();
-            }else{
                 session.beginDialog('/');
                 session.endDialog();
             }
@@ -314,9 +308,6 @@ bot.dialog('PickChoice',[
                 sendButton(session,data1[rrrr]);
                 session.endDialog();
             }else if(rrrr1){
-                session.beginDialog('PickChoice');
-                session.endDialog();
-            }else{
                 session.beginDialog('/');
                 session.endDialog();
             }
@@ -341,9 +332,6 @@ bot.dialog('PickChoice1',[
                 sendButton(session,data1[rrrr]);
                 session.endDialog();
             }else if(rrrr1){
-                session.beginDialog('PickChoice1');
-                session.endDialog();
-            }else{
                 session.beginDialog('/');
                 session.endDialog();
             }
