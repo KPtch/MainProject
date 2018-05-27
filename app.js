@@ -211,7 +211,9 @@ bot.dialog('SelectChoice',[
             sendButton(session,data1[rrrr]);
             session.endDialog();
         }else{
+            session.send("resKey");
             session.beginDialog('/');
+            
         }
         
         
