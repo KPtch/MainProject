@@ -192,7 +192,7 @@ bot.dialog('/',function (session) {
             default:
                 break;
         }
-        else {
+    }else {
         
         var res = 'สวัสดีจ้าา เราคือบอท KunSri'+'\n';
         question.forEach(function(questions,index){
