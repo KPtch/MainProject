@@ -208,12 +208,17 @@ bot.dialog('SelectChoice',[
         
         if(results.response){
             var rrrr= resKeys(results.response.entity);
-            sendButton(session,data1[rrrr]);
-            session.endDialog();
+            var rrrr1= resKeys1(results.response.entity);
+            if(rrrr){
+                sendButton(session,data1[rrrr]);
+                session.endDialog();
+            }else if(rrrr1){
+                session.beginDialog('SelectChoice');
+                session.endDialog();
+            }
         }else{
-            session.send("resKey");
             session.beginDialog('/');
-            
+            session.endDialog();
         }
         
         
@@ -270,12 +275,20 @@ bot.dialog('ChooseChoice',[
         });
     },
     function (session, results) {
+        
         if(results.response){
             var rrrr= resKeys(results.response.entity);
-            sendButton(session,data1[rrrr]);
-            session.endDialog();
+            var rrrr1= resKeys1(results.response.entity);
+            if(rrrr){
+                sendButton(session,data1[rrrr]);
+                session.endDialog();
+            }else if(rrrr1){
+                session.beginDialog('ChooseChoice');
+                session.endDialog();
+            }
         }else{
             session.beginDialog('/');
+            session.endDialog();
         }
         
     }
@@ -290,10 +303,17 @@ bot.dialog('PickChoice',[
         
         if(results.response){
             var rrrr= resKeys(results.response.entity);
-            sendButton(session,data1[rrrr]);
-            session.endDialog();
+            var rrrr1= resKeys1(results.response.entity);
+            if(rrrr){
+                sendButton(session,data1[rrrr]);
+                session.endDialog();
+            }else if(rrrr1){
+                session.beginDialog('PickChoice');
+                session.endDialog();
+            }
         }else{
             session.beginDialog('/');
+            session.endDialog();
         }
     }
 ]);
@@ -307,10 +327,17 @@ bot.dialog('PickChoice1',[
         
         if(results.response){
             var rrrr= resKeys(results.response.entity);
-            sendButton(session,data1[rrrr]);
-            session.endDialog();
+            var rrrr1= resKeys1(results.response.entity);
+            if(rrrr){
+                sendButton(session,data1[rrrr]);
+                session.endDialog();
+            }else if(rrrr1){
+                session.beginDialog('PickChoice1');
+                session.endDialog();
+            }
         }else{
             session.beginDialog('/');
+            session.endDialog();
         }
     }
 ]);
