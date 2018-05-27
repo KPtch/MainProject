@@ -215,6 +215,9 @@ bot.dialog('SelectChoice',[
             }else if(rrrr1){
                 session.beginDialog('SelectChoice');
                 session.endDialog();
+            }else{
+                session.beginDialog('/');
+                session.endDialog();
             }
         }else{
             session.beginDialog('/');
@@ -285,6 +288,9 @@ bot.dialog('ChooseChoice',[
             }else if(rrrr1){
                 session.beginDialog('ChooseChoice');
                 session.endDialog();
+            }else{
+                session.beginDialog('/');
+                session.endDialog();
             }
         }else{
             session.beginDialog('/');
@@ -310,6 +316,9 @@ bot.dialog('PickChoice',[
             }else if(rrrr1){
                 session.beginDialog('PickChoice');
                 session.endDialog();
+            }else{
+                session.beginDialog('/');
+                session.endDialog();
             }
         }else{
             session.beginDialog('/');
@@ -333,6 +342,9 @@ bot.dialog('PickChoice1',[
                 session.endDialog();
             }else if(rrrr1){
                 session.beginDialog('PickChoice1');
+                session.endDialog();
+            }else{
+                session.beginDialog('/');
                 session.endDialog();
             }
         }else{
