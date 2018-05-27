@@ -255,7 +255,7 @@ bot.dialog('PickChoice',[
 ]);
 bot.dialog('PickChoice1',[
     function (session) {
-        builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบลงทะเบียนเรียนล่าช้า|ใบขอลงทะเบียนเรียน-ปรับปรุง", {
+        builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบลงทะเบียนเรียนล่าช้า|ใบขอลงทะเบียนเรียน-ปรับปรุง(แอดมือ)", {
             listStyle: builder.ListStyle.button
         });
     },
