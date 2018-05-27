@@ -178,16 +178,20 @@ bot.dialog('/',function (session) {
         
         switch(data2[resKey1]) {
             case "ใบลา":
-//                 session.beginDialog('SelectChoice');
-                session.send("ขอละเอียดกว่านี้หน่อยน้า");
+                session.beginDialog('SelectChoice');
+//                 session.send("ขอละเอียดกว่านี้หน่อยน้า");
                 break;
             case "สอบ":
-//                 session.beginDialog('ChooseChoice');
-                session.send("ขอละเอียดกว่านี้หน่อยน้า");
+                session.beginDialog('ChooseChoice');
+//                 session.send("ขอละเอียดกว่านี้หน่อยน้า");
                 break;
             case "เทียบ":
-//                 session.beginDialog('PickChoice');
-                session.send("ขอละเอียดกว่านี้หน่อยน้า");
+                session.beginDialog('PickChoice');
+//                 session.send("ขอละเอียดกว่านี้หน่อยน้า");
+                break;
+            case "เพิ่ม":
+                session.beginDialog('PickChoice1');
+//                 session.send("ขอละเอียดกว่านี้หน่อยน้า");
                 break;
             default:
                 break;
@@ -203,46 +207,68 @@ bot.dialog('/',function (session) {
     }           
            
 });
-// bot.dialog('SelectChoice',[
-//     function (session) {
-//         builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบลาป่วย/กิจ|ใบขอลาออก|ใบขอลาพักการศึกษา", {
-//             listStyle: builder.ListStyle.button
-//         });
-//     },
-//     function (session, results) {
-//         var rrr= resKeys(results.response.entity);
-//         sendButton(session,data1[rrr]);
-//         session.endDialog();
+bot.dialog('SelectChoice',[
+    function (session) {
+        builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบลาป่วย/กิจ|ใบขอลาออก|ใบขอลาพักการศึกษา", {
+            listStyle: builder.ListStyle.button
+        });
+    },
+    function (session, results) {
+        if(results.response){
+            var rrrrr= resKeys(results.response.entity);
+            sendButton(session,data1[rrrrr]);
+        }
+        session.endDialog();
        
-//     }
-// ]);
-// bot.dialog('ChooseChoice',[
-//     function (session) {
-//         builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบขอสอบชดใช้|ใบขอสอบชดใช้กรณีป่วย", {
-//             listStyle: builder.ListStyle.button
-//         });
-//     },
-//     function (session, results) {
-//         var rrrr= resKeys(results.response.entity);
-//         sendButton(session,data1[rrrr]);
-//         session.endDialog();
+    }
+]);
+bot.dialog('ChooseChoice',[
+    function (session) {
+        builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบขอสอบชดใช้|ใบขอสอบชดใช้กรณีป่วย", {
+            listStyle: builder.ListStyle.button
+        });
+    },
+    function (session, results) {
+        if(results.response){
+            var rrrrr= resKeys(results.response.entity);
+            sendButton(session,data1[rrrrr]);
+        }
+        session.endDialog();
         
-//     }
-// ]);
-// bot.dialog('PickChoice',[
-//     function (session) {
-//         builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบขอเทียบโอนรายวิชา|ใบขอเทียบรายวิชา", {
-//             listStyle: builder.ListStyle.button
-//         });
-//     },
-//     function (session, results) {
-//         var rrrrr= resKeys(results.response.entity);
-//         sendButton(session,data1[rrrrr]);
-//         session.endDialog();
+    }
+]);
+bot.dialog('PickChoice',[
+    function (session) {
+        builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบขอเทียบโอนรายวิชา|ใบขอเทียบรายวิชา", {
+            listStyle: builder.ListStyle.button
+        });
+    },
+    function (session, results) {
         
-//     }
-// ]);
-
+        
+        if(results.response){
+            var rrrrr= resKeys(results.response.entity);
+            sendButton(session,data1[rrrrr]);
+        }
+        session.endDialog();
+    }
+]);
+bot.dialog('PickChoice1',[
+    function (session) {
+        builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบลงทะเบียนเรียนล่าช้า|ใบขอลงทะเบียนเรียน-ปรับปรุง", {
+            listStyle: builder.ListStyle.button
+        });
+    },
+    function (session, results) {
+        
+        
+        if(results.response){
+            var rrrrr= resKeys(results.response.entity);
+            sendButton(session,data1[rrrrr]);
+        }
+        session.endDialog();
+    }
+]);
 
 
 
