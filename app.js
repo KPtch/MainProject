@@ -217,6 +217,8 @@ bot.dialog('SelectChoice',[
                 session.endDialog();
             }else if("ต้องการใบอื่น"){
                 session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
+            }else{
+                session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
             }
         }else{
             session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
@@ -290,6 +292,8 @@ bot.dialog('ChooseChoice',[
                 session.endDialog();
             }else if("ต้องการใบอื่น"){
                 session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
+            }else{
+                session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
             }
         }else{
             session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
@@ -316,6 +320,8 @@ bot.dialog('PickChoice',[
                 session.endDialog();
             }else if("ต้องการใบอื่น"){
                 session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
+            }else{
+                session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
             }
         }else{
             session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
@@ -340,6 +346,8 @@ bot.dialog('PickChoice1',[
                 session.beginDialog('/');
                 session.endDialog();
             }else if("ต้องการใบอื่น"){
+                session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
+            }else{
                 session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
             }
         }else{
