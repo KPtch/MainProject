@@ -200,7 +200,7 @@ bot.dialog('/',function (session) {
 });
 bot.dialog('SelectChoice',[
     function (session) {
-        builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบลาป่วย/กิจ|ใบขอลาออก|ใบขอลาพักการศึกษา", {
+        builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบลาป่วย/กิจ|ใบขอลาออก|ใบขอลาพักการศึกษา|ต้องการใบอื่น", {
             listStyle: builder.ListStyle.button
         });
     },
@@ -215,10 +215,11 @@ bot.dialog('SelectChoice',[
             }else if(rrrr1){
                 session.beginDialog('/');
                 session.endDialog();
+            }else if("ต้องการใบอื่น"){
+                session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
             }
         }else{
-            session.beginDialog('/');
-            session.endDialog();
+            session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
         }
         
         
@@ -270,7 +271,7 @@ bot.dialog('SelectChoice',[
 ]);
 bot.dialog('ChooseChoice',[
     function (session) {
-        builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบขอสอบชดใช้|ใบขอสอบชดใช้กรณีป่วย", {
+        builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบขอสอบชดใช้|ใบขอสอบชดใช้กรณีป่วย|ต้องการใบอื่น", {
             listStyle: builder.ListStyle.button
         });
     },
@@ -285,17 +286,18 @@ bot.dialog('ChooseChoice',[
             }else if(rrrr1){
                 session.beginDialog('/');
                 session.endDialog();
+            }else if("ต้องการใบอื่น"){
+                session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
             }
         }else{
-            session.beginDialog('/');
-            session.endDialog();
+            session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
         }
         
     }
 ]);
 bot.dialog('PickChoice',[
     function (session) {
-        builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบขอเทียบโอนรายวิชา|ใบขอเทียบรายวิชา", {
+        builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบขอเทียบโอนรายวิชา|ใบขอเทียบรายวิชา|ต้องการใบอื่น", {
             listStyle: builder.ListStyle.button
         });
     },
@@ -310,16 +312,17 @@ bot.dialog('PickChoice',[
             }else if(rrrr1){
                 session.beginDialog('/');
                 session.endDialog();
+            }else if("ต้องการใบอื่น"){
+                session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
             }
         }else{
-            session.beginDialog('/');
-            session.endDialog();
+            session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
         }
     }
 ]);
 bot.dialog('PickChoice1',[
     function (session) {
-        builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบลงทะเบียนเรียนล่าช้า|ใบขอลงทะเบียนเรียน-ปรับปรุง(แอดมือ)", {
+        builder.Prompts.choice(session, "เลือกใบที่ต้องการ", "ใบลงทะเบียนเรียนล่าช้า|ใบขอลงทะเบียนเรียน-ปรับปรุง(แอดมือ)|ต้องการใบอื่น", {
             listStyle: builder.ListStyle.button
         });
     },
@@ -334,10 +337,11 @@ bot.dialog('PickChoice1',[
             }else if(rrrr1){
                 session.beginDialog('/');
                 session.endDialog();
+            }else if("ต้องการใบอื่น"){
+                session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
             }
         }else{
-            session.beginDialog('/');
-            session.endDialog();
+            session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
         }
     }
 ]);
