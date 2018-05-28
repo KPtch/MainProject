@@ -330,7 +330,7 @@ bot.dialog('PickChoice',[
 ]);
 bot.dialog('PickChoice1',[
     function (session) {
-        builder.Prompts.choice(session, "เลือกใบที่ต้องการได้เลยน้า", "ใบลงทะเบียนเรียนล่าช้า|ใบขอลงทะเบียนเรียน-ปรับปรุง(แอดมือ)|ต้องการใบอื่น", {
+        builder.Prompts.choice(session, "เลือกใบที่ต้องการได้เลยน้า", "ใบลงเรียนล่าช้า|ใบแอดมือ|ต้องการใบอื่น", {
             listStyle: builder.ListStyle.button
         });
     },
