@@ -206,68 +206,68 @@ bot.dialog('SelectChoice',[
     },
     function (session, results) {
         
-//         if(results.response){
-//             var rrrr= resKeys(results.response.entity);
-//             var rrrr1= resKeys1(results.response.entity);
-//             if(rrrr){
-//                 sendButton(session,data1[rrrr]);
-//                 session.endDialog();
-//             }else if(rrrr1){
-//                 session.beginDialog('/');
-//                 session.endDialog();
-//             }else if("ต้องการใบอื่น"){
-//                 session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
-//             }
-//         }else{
-//             session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
-//         }
-        
-        
         if(results.response){
-            var rrrrr= resKeys(results.response.entity);
-            var rrrrr1= resKeys1(results.response.entity);
-            if(rrrrr){
-                sendButton(session,data1[rrrrr]);   
+            var rrrr= resKeys(results.response.entity);
+            var rrrr1= resKeys1(results.response.entity);
+            if(rrrr){
+                sendButton(session,data1[rrrr]);
                 session.endDialog();
-
-            }
-            else if(rrrrr1){
-
-                switch(data2[rrrrr1]) {
-                    case "ใบลา":
-                        session.beginDialog('SelectChoice');
-                        session.endDialog();
-                        break;
-                    case "สอบ":
-                        session.beginDialog('ChooseChoice');
-                        session.endDialog();
-                        break;
-                    case "เทียบ":
-                        session.beginDialog('PickChoice');
-                        session.endDialog();
-                        break;
-                    case "เพิ่ม":
-                        session.beginDialog('PickChoice1');
-                        session.endDialog();
-                        break;
-                    default:
-                        session.endDialog();
-                        break;
-                }
+            }else if(rrrr1){
+                session.beginDialog('/');
+                session.endDialog();
             }else if("ต้องการใบอื่น"){
                 session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
-            }else {
+            }
+        }else{
+            session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
+        }
+        
+        
+//         if(results.response){
+//             var rrrrr= resKeys(results.response.entity);
+//             var rrrrr1= resKeys1(results.response.entity);
+//             if(rrrrr){
+//                 sendButton(session,data1[rrrrr]);   
+//                 session.endDialog();
 
-                var res = 'สวัสดีจ้าา เราคือบอท KunSri'+'\n';
-                question.forEach(function(questions,index){
-                    res += "\n"+questions;
+//             }
+//             else if(rrrrr1){
 
-                });
-                session.send(res);
-                session.endDialog();
-            } 
-       }
-       session.endDialog();
+//                 switch(data2[rrrrr1]) {
+//                     case "ใบลา":
+//                         session.beginDialog('SelectChoice');
+//                         session.endDialog();
+//                         break;
+//                     case "สอบ":
+//                         session.beginDialog('ChooseChoice');
+//                         session.endDialog();
+//                         break;
+//                     case "เทียบ":
+//                         session.beginDialog('PickChoice');
+//                         session.endDialog();
+//                         break;
+//                     case "เพิ่ม":
+//                         session.beginDialog('PickChoice1');
+//                         session.endDialog();
+//                         break;
+//                     default:
+//                         session.endDialog();
+//                         break;
+//                 }
+//             }else if("ต้องการใบอื่น"){
+//                 session.endDialog('กรอกใบที่ต้องการใหม่หน่อยน้า');
+//             }else {
+
+//                 var res = 'สวัสดีจ้าา เราคือบอท KunSri'+'\n';
+//                 question.forEach(function(questions,index){
+//                     res += "\n"+questions;
+
+//                 });
+//                 session.send(res);
+//                 session.endDialog();
+//             } 
+//        }
+//        session.endDialog();
 
     }
 ]);
